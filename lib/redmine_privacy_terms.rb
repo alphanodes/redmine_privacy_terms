@@ -7,7 +7,7 @@ module RedminePrivacyTerms
     def setup
       # Patches
       Additionals.patch(%w[ApplicationController
-                           SettingsHelper
+                           SettingsController
                            User], 'redmine_privacy_terms')
 
       # Macros
