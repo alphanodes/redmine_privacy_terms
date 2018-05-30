@@ -1,0 +1,38 @@
+p
+  = label_tag 'settings[enable_terms]', l(:label_enable_terms)
+  = check_box_tag 'settings[enable_terms]', 1, @settings[:enable_terms].to_i == 1
+
+fieldset.privacy-terms
+  legend = l(:label_terms_url)
+
+  p
+    = label_tag 'settings[terms_project_id]', l(:label_project)
+    = auto_complete_select_entries('settings[terms_project_id]',
+                                   'project',
+                                   (@settings[:terms_project_id].present? ? Project.find(@settings[:terms_project_id]) : nil))
+
+  p
+    = label_tag 'settings[terms_page]', l(:label_wiki_page)
+    = text_field_tag 'settings[terms_page]', @settings[:terms_page], size: 50
+    - if RedminePrivacyTerms.valid_terms_url?
+      '
+      = link_to(l(:button_show), RedminePrivacyTerms.terms_url)
+    em.info = l(:terms_url_info)
+
+fieldset.privacy-terms
+  legend = l(:label_terms_reject_url)
+
+  p
+    = label_tag 'settings[terms_reject_project_id]', l(:label_project)
+    = auto_complete_select_entries('settings[terms_reject_project_id]',
+                                   'project',
+                                   (@settings[:terms_reject_project_id].present? ? Project.find(@settings[:terms_reject_project_id]) : nil),
+                                   include_blank: true, allow_clear: true)
+
+  p
+    = label_tag 'settings[terms_reject_page]', t(:label_terms_reject_page)
+    = text_field_tag 'settings[terms_reject_page]', @settings[:terms_reject_page], size: 50
+    - if RedminePrivacyTerms.valid_terms_reject_url?
+      '
+      = link_to(l(:button_show), RedminePrivacyTerms.terms_reject_url)
+    em.info = l(:terms_reject_url_info)

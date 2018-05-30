@@ -1,0 +1,17 @@
+fieldset.privacy-terms
+  legend = l(:button_reset_terms)
+
+  br
+  = hidden_field_tag 'settings[last_terms_reset]', RedminePrivacyTerms.settings[:last_terms_reset]
+
+  p#caching-run
+    = l(:label_last_terms_reset)
+    ':
+    - if RedminePrivacyTerms.settings[:last_terms_reset].present?
+      = format_time(RedminePrivacyTerms.settings[:last_terms_reset], true, User.current)
+    - else
+     ' -
+  p
+    = link_to(l(:button_reset_terms), reset_terms_path)
+  p
+    em.info = t(:privacy_terms_reset_info)

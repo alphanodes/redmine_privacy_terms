@@ -1,0 +1,13 @@
+- @settings = ActionController::Parameters.new(@settings)
+= render_tabs [{ name: 'cookie_agreement',
+                 partial: 'redmine_privacy_terms/settings/cookie_agreement',
+                 label: :label_privacy_cookie_agreement },
+               { name: 'terms',
+                 partial: 'redmine_privacy_terms/settings/terms',
+                 label: :label_privacy_terms },
+               { name: 'tools',
+                 partial: 'redmine_privacy_terms/settings/tools',
+                 label: :label_privacy_terms_tools },
+               { name: 'inspect',
+                 partial: 'redmine_privacy_terms/settings/inspect',
+                 label: :label_privacy_terms_inspect }]

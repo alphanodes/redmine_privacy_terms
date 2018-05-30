@@ -1,0 +1,32 @@
+p
+  = label_tag 'settings[enable_cookie_agreement]', l(:label_enable_cookie_agreement)
+  = check_box_tag 'settings[enable_cookie_agreement]', 1, @settings[:enable_cookie_agreement].to_i == 1
+
+p
+  = label_tag 'settings[cookieconsent_popup_background]', t(:label_cookieconsent_popup_background)
+  = color_field_tag 'settings[cookieconsent_popup_background]', @settings[:cookieconsent_popup_background], size: 10
+p
+  = label_tag 'settings[cookieconsent_popup_text]', t(:label_cookieconsent_popup_text)
+  = color_field_tag 'settings[cookieconsent_popup_text]', @settings[:cookieconsent_popup_text], size: 10
+p
+  = label_tag 'settings[cookieconsent_button_background]', t(:label_cookieconsent_button_background)
+  = color_field_tag 'settings[cookieconsent_button_background]', @settings[:cookieconsent_button_background], size: 10
+p
+  = label_tag 'settings[cookieconsent_button_text]', t(:label_cookieconsent_button_text)
+  = color_field_tag 'settings[cookieconsent_button_text]', @settings[:cookieconsent_button_text], size: 10
+p
+  = label_tag 'settings[cookieconsent_message]', t(:label_cookieconsent_message)
+  = text_area_tag 'settings[cookieconsent_message]', @settings[:cookieconsent_message], rows: 3, cols: 50
+p
+  = label_tag 'settings[cookieconsent_dismiss]', t(:label_cookieconsent_dismiss)
+  = text_field_tag 'settings[cookieconsent_dismiss]', @settings[:cookieconsent_dismiss], size: 50
+p
+  = label_tag 'settings[cookieconsent_link]', t(:label_cookieconsent_link)
+  = text_field_tag 'settings[cookieconsent_link]', @settings[:cookieconsent_link], size: 50
+p
+  = label_tag 'settings[cookieconsent_href]', t(:label_cookieconsent_href)
+  = text_field_tag 'settings[cookieconsent_href]', @settings[:cookieconsent_href], size: 50
+  - if @settings[:cookieconsent_href].present?
+    '
+    = link_to(l(:button_show), @settings[:cookieconsent_href], class: 'external')
+  em.info = l(:cookieconsent_href_info)

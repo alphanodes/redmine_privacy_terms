@@ -1,0 +1,12 @@
+- if RedminePrivacyTerms.setting?(:enable_terms) && \
+    RedminePrivacyTerms.valid_terms_url? && \
+    (User.current == user || User.current.allowed_to?(:show_terms_condition, nil, global: true))
+  li.terms-condition
+    = l(:label_privacy_terms)
+    ul
+      li = link_to(l(:button_show), RedminePrivacyTerms.terms_url)
+      li
+        - if user.accept_terms?
+          = l(:label_terms_accepted_at, value: format_time(user.accept_terms_at, true, User.current))
+        - else
+          = l(:label_terms_not_accepted)

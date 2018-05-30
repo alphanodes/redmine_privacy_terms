@@ -1,0 +1,38 @@
+en:
+  button_reset_terms: Request new terms of use
+  cookieconsent_href_info: This URL must link to an external site to which every visitor has public access.
+  field_privacy_terms_result: Result
+  inspect_admin_amount: Amount of admins
+  inspect_never_logedin_users: Never logged in user
+  inspect_user_inactive_over_one_year: Inactive user > 1 year
+  inspect_user_terms_not_accepted: User without accepted term of use
+  inspect_user_visibility: Number of user-visibility all
+  label_cookieconsent_button_background: Background button
+  label_cookieconsent_button_text: Text button
+  label_cookieconsent_dismiss: Dismiss button text
+  label_cookieconsent_href: Cookieconsent URL link
+  label_cookieconsent_link: URL link text
+  label_cookieconsent_message: Cookieconsent message
+  label_cookieconsent_popup_background: Background popup
+  label_cookieconsent_popup_text: Text popup
+  label_default_accept_terms: I agree
+  label_default_reject_terms: Reject
+  label_enable_cookie_agreement: Enable cookie agreement
+  label_enable_terms: Enable terms
+  label_last_terms_reset: Last execution
+  label_privacy_cookie_agreement: Cookie agreement
+  label_privacy_terms_inspect: Inspect
+  label_privacy_terms_tools: Tools
+  label_privacy_terms: Terms of use
+  label_terms_accepted_at: accepted at %{value}
+  label_terms_not_accepted: not acccepted yet
+  label_terms_reject_page: Wiki page or external URL
+  label_terms_reject_url: URL of the wiki for users who reject the terms
+  label_terms_url: URL of the wiki with the terms
+  notice_terms_accepted_not_saved: Terms of use policy was not activated by the administrator. So the action was not saved.
+  notice_terms_reset_successfully: Terms of use policy successfully requested again
+  permission_show_terms_condition: Show terms condition
+  privacy_terms_inspect_info: This page delivers information that may be helpful to identify possible data protection problems.
+  privacy_terms_reset_info: All users will be asked to accept the privacy policy again. For example use this, if changes have been made to the regulations.
+  terms_reject_url_info: Here you can specify a wiki page for the selected project or an external website.
+  terms_url_info: A wiki page must be specified here in the selected project to which each user has read-access. A public project is the best way to do this. In this wiki page the conditions are to be defined. Additionally, the two macros {{terms_accept}} and {{terms_reject}} must be implemented in it.

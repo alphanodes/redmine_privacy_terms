@@ -1,0 +1,48 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+
+.accept-terms-button {
+  font-weight: bold;
+  background-color: #1abc9c;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 -0.25em 0 rgba(0, 0, 0, 0.25), 0 0.25em 0.25em rgba(0, 0, 0, 0.05);
+  display: inline-block;
+}
+
+.reject-terms-button {
+  font-weight: bold;
+  background-color: #e65d4f;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 -0.25em 0 rgba(0, 0, 0, 0.25), 0 0.25em 0.25em rgba(0, 0, 0, 0.05);
+  display: inline-block;
+}
+
+.accept-terms-button,
+.accept-terms-button:hover,
+.accept-terms-button:visited,
+.reject-terms-button,
+.reject-terms-button:hover,
+.reject-terms-button:visited {
+  color: #fff !important;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.accept-terms-button:active,
+.reject-terms-button:active {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2), inset 0 2px 0 hsla(0, 0%, 100%, 0.1), inset 0 0.25em 0.5em rgba(0, 0, 0, 0.05);
+  margin-top: 0.25em;
+  padding-bottom: 0.5em;
+}
+
+.inspect-good {
+  color: green;
+}
+
+.inspect-problem {
+  color: red;
+}
+
+.inspect-info {
+  font-style: italic;
+}

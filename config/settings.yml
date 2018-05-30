@@ -1,0 +1,16 @@
+---
+cookieconsent_button_background: '#3e5b76'
+cookieconsent_button_text: '#ffffff'
+cookieconsent_dismiss: 'Got it!'
+cookieconsent_href: 'https://cookiesandyou.com/'
+cookieconsent_link: 'Learn more'
+cookieconsent_message: 'This website uses cookies to ensure you get the best experience on our website'
+cookieconsent_popup_background: '#c8c8c8'
+cookieconsent_popup_text: '#000000'
+enable_cookie_agreement: 0
+enable_terms: 0
+last_terms_reset: ''
+terms_page: ''
+terms_project_id: ''
+terms_reject_page: ''
+terms_reject_project_id: ''

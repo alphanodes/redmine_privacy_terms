@@ -1,0 +1,28 @@
+- if RedminePrivacyTerms.setting?(:enable_cookie_agreement)
+  = stylesheet_link_tag 'cookieconsent.min', plugin: 'redmine_privacy_terms'
+  = javascript_include_tag('cookieconsent.min', plugin: 'redmine_privacy_terms')
+
+  javascript:
+    $(window).load(function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#{RedminePrivacyTerms.settings[:cookieconsent_popup_background]}",
+            "text": "#{RedminePrivacyTerms.settings[:cookieconsent_popup_text]}"
+          },
+          "button": {
+            "background": "#{RedminePrivacyTerms.settings[:cookieconsent_button_background]}",
+            "text": "#{RedminePrivacyTerms.settings[:cookieconsent_button_text]}"
+          }
+        },
+        "position": "top",
+        "content": {
+          "message": "#{RedminePrivacyTerms.settings[:cookieconsent_message]}",
+          "dismiss": "#{RedminePrivacyTerms.settings[:cookieconsent_dismiss]}",
+          "link": "#{RedminePrivacyTerms.settings[:cookieconsent_link]}",
+          "href": "#{RedminePrivacyTerms.settings[:cookieconsent_href]}"
+        }
+      })});
+
+- if RedminePrivacyTerms.setting?(:enable_cookie_agreement) || RedminePrivacyTerms.setting?(:enable_terms)
+  = stylesheet_link_tag 'privacy_terms', plugin: 'redmine_privacy_terms'

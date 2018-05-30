@@ -1,0 +1,38 @@
+de:
+  button_reset_terms: Nutzungsbedingungen neu anfordern
+  cookieconsent_href_info: Die URL sollte auf eine externe Seite verlinken, auf die jeder Zugriff hat (auch wenn man nicht in Redmine angemeldet ist).
+  field_privacy_terms_result: Ergebnis
+  inspect_admin_amount: Anzahl Administratoren
+  inspect_never_logedin_users: Nie angemeldete Benutzer
+  inspect_user_inactive_over_one_year: Benutzer inaktiv > 1 Jahr
+  inspect_user_terms_not_accepted: Benutzer ohne angenommene Nutzungsbedingungen
+  inspect_user_visibility: Anzahl Benutzer-Sichtbarkeit alle
+  label_cookieconsent_button_background: Hintergrund Button
+  label_cookieconsent_button_text: Text Button
+  label_cookieconsent_dismiss: Annahme
+  label_cookieconsent_href: URL Link Cookiehinweis
+  label_cookieconsent_link: URL Linktext
+  label_cookieconsent_message: Nachricht
+  label_cookieconsent_popup_background: Hintergrund Popup
+  label_cookieconsent_popup_text: Text Popup
+  label_default_accept_terms: Einverstanden
+  label_default_reject_terms: Ablehnen
+  label_enable_cookie_agreement: Cookie Hinweis aktivieren
+  label_enable_terms: Bedingungen aktivieren
+  label_last_terms_reset: Letzte Ausführung
+  label_privacy_cookie_agreement: Cookie Zustimmung
+  label_privacy_terms_inspect: Prüfung
+  label_privacy_terms_tools: Tools
+  label_privacy_terms: Nutzungsbedingungen
+  label_terms_accepted_at: angenommen am %{value}
+  label_terms_not_accepted: nicht akzeptiert
+  label_terms_reject_page: Wiki-Seite oder externere URL
+  label_terms_reject_url: URL zur Wikiseite für Anwender die Bedingungen ablehnen
+  label_terms_url: URL zur Wikiseite mit den Bedingungen
+  notice_terms_accepted_not_saved: Nutzungsbedingungen wurden durch den Admin nicht aktiviert, daher wurde die Aktion nicht gespeichert.
+  notice_terms_reset_successfully: Nutzungsbedingungen erfolgreich neu angefordert
+  permission_show_terms_condition: Datenschutz Status anzeigen
+  privacy_terms_inspect_info: Diese Seite liefert Informationen, die dabei behilflich sein können mögliche Datenschutzprobleme zu identifieren. Im Idealfall ist alles grün.
+  privacy_terms_reset_info: Alle Benutzer werden erneut aufgefordert die Nutzungsbedingungen anzunehmen. Dies kann z.B. verwendet werden, wenn sich an den Bedingungen etwas geändert hat.
+  terms_reject_url_info: Hier kann eine Wiki-Seite zum ausgewählten Projekt oder eine externe Webseite angegeben werden.
+  terms_url_info: Hier muss eine Wiki-Seite im ausgewählten Projekt angegeben werden, auf die jeder Benutzer Lesezugriff hat. Dafür eignet sich am Besten ein öffentliches Projekt. In dieser Wiki-Seite sind die Bedingungen zu definieren. Zusätzlich müssen die beiden Makros {{terms_accept}} und {{terms_reject}} darin verwendet werden.
