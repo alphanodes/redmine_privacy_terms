@@ -1,12 +1,15 @@
 Privacy & Terms plugin for Redmine
 ==================================
 
+[![Rate at redmine.org](https://img.shields.io/badge/rate%20at-redmine.org-blue.svg?style=fla)](https://www.redmine.org/plugins/redmine_privacy_terms) ![Jenkins Build Status](https://pm.alphanodes.com/jenkins/buildStatus/icon?job=Devel-build-redmine-privacy-terms)
+
 Features
 --------
 
 * Adds https://cookieconsent.insites.com/ support (cookie agreement)
 * Add terms support, which each user has to accept before using Redmine
 * Add privacy and security [inspectors](https://github.com/alphanodes/redmine_privacy_terms/blob/master/INSPECTORS.md)
+
 
 Requirements
 ------------
