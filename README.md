@@ -38,15 +38,15 @@ Usage
 
 1. Add wiki page for the terms and wiki page that will be shown when a user rejects the agreement.
 Add on the terms wiki page links to accept and reject the agreement: {{terms_accept}} | {{terms_reject}}
-
 If you want to use multiple languages, create a wiki page for each language. If no wiki page is available for a language, default wiki page will be used.
 
-E.g. /projects/my_project/wiki/terms (used as default), /projects/my_project/wiki/terms_de, /projects/my_project/wiki/terms_it, etc.
+E.g. "my_terms" (used as default), my_terms_de, my_terms_it, etc.
 
-2. Add urls of the pages to settings without domain. For example, if url is 'https://my_domain.com/projects/my_project/wiki/terms'
-then you need to add to settings '/projects/my_project/wiki/terms'.
+2. Select your project and add your wiki page in privacy terms plugin settings.
 
 3. Enable the Terms in settings.
+
+If you did not specify wiki pages or projects, terms are not activated. Even if you assing a non-existing wiki page, terms are not activated. If all settings are correct, you'll find a "show" link behind the wiki page text field.
 
 
 Configuration
