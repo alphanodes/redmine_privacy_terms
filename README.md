@@ -36,13 +36,13 @@ Restart Redmine (application server) and you should see the plugin show up in th
 Usage
 -----
 
-1. Add wiki page for the terms and wiki page that will be shown when a user rejects the agreement.
-Add on the terms wiki page links to accept and reject the agreement: {{terms_accept}} | {{terms_reject}}
-If you want to use multiple languages, create a wiki page for each language. If no wiki page is available for a language, default wiki page will be used.
+1. First of all, add a wiki page for the terms and a wiki page with information for those users who reject the agreement.
+Don't forget to add the macros on the wiki page with the terms which implement the "accept" and "reject" buttons: {{terms_accept}} | {{terms_reject}}
+If you want to use multiple languages, create a wiki page for each language. If no wiki page is available for a language, the default wiki page will be used.
 
 E.g. "my_terms" (used as default), my_terms_de, my_terms_it, etc.
 
-2. Select your project and add your wiki page in privacy terms plugin settings.
+2. Second, go to the plugin settings and open the section "Terms of use". Enable the function and select your project and add your wiki pages that you have created before. Apply your changes.
 
 3. Enable the Terms in settings.
 
@@ -54,6 +54,13 @@ Configuration
 
 ### Plugin settings
 
+The plugin offers settings for:
+
+* Cookie agreement
+* Terms of use
+* Tools
+
+The "Inspect" section displays information on possible data protection problems you should try to fix.
 
 
 
