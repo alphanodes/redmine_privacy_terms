@@ -30,7 +30,7 @@ module RedminePrivacyTerms
       return if page.blank? || external_page?(page)
       project_id = RedminePrivacyTerms.settings[:terms_project_id]
       return if project_id.blank?
-      project = Project.find(project_id)
+      project = Project.find_by(id: project_id)
       wiki_page = project.wiki.find_page(page)
       return true if wiki_page.present?
     end
@@ -42,14 +42,14 @@ module RedminePrivacyTerms
 
       project_id = RedminePrivacyTerms.settings[:terms_reject_project_id]
       return if project_id.blank?
-      project = Project.find(project_id)
+      project = Project.find_by(id: project_id)
       wiki_page = project.wiki.find_page(page)
       return true if wiki_page.present?
     end
 
     def terms_url(lang = nil)
       page = RedminePrivacyTerms.settings[:terms_page]
-      project = Project.find(RedminePrivacyTerms.settings[:terms_project_id])
+      project = Project.find_by(id: RedminePrivacyTerms.settings[:terms_project_id])
 
       if lang
         i18n_page = additionals_title_for_locale(page, lang)
@@ -68,7 +68,7 @@ module RedminePrivacyTerms
       page = RedminePrivacyTerms.settings[:terms_reject_page]
       return page if external_page?(page)
 
-      project = Project.find(RedminePrivacyTerms.settings[:terms_reject_project_id])
+      project = Project.find_by(id: RedminePrivacyTerms.settings[:terms_reject_project_id])
 
       if lang
         i18n_page = additionals_title_for_locale(page, lang)

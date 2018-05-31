@@ -1,4 +1,5 @@
 - @settings = ActionController::Parameters.new(@settings)
+- @redmine_reporting_support = Redmine::Plugin.installed?('redmine_reporting') ? true : false
 = render_tabs [{ name: 'cookie_agreement',
                  partial: 'redmine_privacy_terms/settings/cookie_agreement',
                  label: :label_privacy_cookie_agreement },

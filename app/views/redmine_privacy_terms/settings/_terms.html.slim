@@ -7,10 +7,15 @@ fieldset.privacy-terms
 
   p
     = label_tag 'settings[terms_project_id]', l(:label_project)
-    = auto_complete_select_entries('settings[terms_project_id]',
-                                   'project',
-                                   (@settings[:terms_project_id].present? ? Project.find(@settings[:terms_project_id]) : nil))
-
+    - if @redmine_reporting_support
+      = auto_complete_select_entries('settings[terms_project_id]',
+                                     'project',
+                                     (@settings[:terms_project_id].present? ? Project.find_by(id: @settings[:terms_project_id]) : nil))
+    - else
+      = select_tag('settings[terms_project_id]',
+                   project_tree_options_for_select(Project.active,
+                                                   selected: @settings[:terms_project_id].present? ? Project.find_by(id: @settings[:terms_project_id]) : nil),
+                   required: true)
   p
     = label_tag 'settings[terms_page]', l(:label_wiki_page)
     = text_field_tag 'settings[terms_page]', @settings[:terms_page], size: 50
@@ -24,10 +29,16 @@ fieldset.privacy-terms
 
   p
     = label_tag 'settings[terms_reject_project_id]', l(:label_project)
-    = auto_complete_select_entries('settings[terms_reject_project_id]',
-                                   'project',
-                                   (@settings[:terms_reject_project_id].present? ? Project.find(@settings[:terms_reject_project_id]) : nil),
-                                   include_blank: true, allow_clear: true)
+    - if @redmine_reporting_support
+      = auto_complete_select_entries('settings[terms_reject_project_id]',
+                                     'project',
+                                     (@settings[:terms_reject_project_id].present? ? Project.find_by(id: @settings[:terms_reject_project_id]) : nil),
+                                     include_blank: true, allow_clear: true)
+    - else
+      = select_tag('settings[terms_reject_project_id]',
+                   project_tree_options_for_select(Project.active,
+                                                   selected: @settings[:terms_reject_project_id].present? ? Project.find_by(id: @settings[:terms_reject_project_id]) : nil),
+                                                   include_blank: true)
 
   p
     = label_tag 'settings[terms_reject_page]', t(:label_terms_reject_page)
