@@ -3,7 +3,7 @@ Privacy & Terms inspectors for Redmine
 
 ### [Authentication](#authentication)
 
-Authentication activation required. Otherwise all guest users (not logged in users) are also able to view content
+Authentication activation required. Otherwise all guest users (not logged in users) are also able to view content.
 
 ### [Protocol](#protocol)
 
@@ -15,12 +15,37 @@ Limit the number of user accounts with administration rights. Ideally there shou
 
 ### [Password length](#password_min_length)
 
-Make sure your password lenght is 8 or higher.
+Make sure your password lenght is 8 or higher. Each additional character increases password security.
 
 
 ### [User role visibility all](#roles_users_visibility_all)
 
 Roles with user visibility ALL - make sure if this is really necessary.
+
+#### Example for user visibility
+
+There is project A with:
+
+*   User A
+*   User B
+
+There is project B with:
+
+*   User B
+*   User C
+
+This is what user A sees with user visibility ALL:
+
+*   User A
+*   User B
+*   User C
+
+If you change user visibility of User A to "Members of visible projects" this user will only see:
+
+*   User A
+*   User B
+
+The user does not see members of other projects, which makes more sense.
 
 ### [Inactive users](#inactive_users)
 
