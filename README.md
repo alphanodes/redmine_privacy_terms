@@ -9,6 +9,8 @@ Features
 * Adds https://cookieconsent.insites.com/ support (cookie agreement)
 * Add terms support, which each user has to accept before using Redmine
 * Add privacy and security [inspectors](https://github.com/alphanodes/redmine_privacy_terms/blob/master/INSPECTORS.md)
+* multilingual support
+* API support (if terms are required, API call throw forbitten till user accept terms)
 
 
 Requirements

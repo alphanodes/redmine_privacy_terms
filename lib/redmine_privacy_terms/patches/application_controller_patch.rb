@@ -11,13 +11,17 @@ module RedminePrivacyTerms
       module InstanceMethods
         private
 
-        # TODO: API support has to be added
         def check_agreement
           return unless RedminePrivacyTerms.valid_terms_url? &&
                         RedminePrivacyTerms.valid_terms_reject_url? &&
                         need_accept_terms? &&
                         !allowed_path?
-          redirect_to RedminePrivacyTerms.terms_url(::I18n.locale)
+
+          if api_request?
+            render_error message: 'Terms not accepted', status: 403
+          else
+            redirect_to RedminePrivacyTerms.terms_url(::I18n.locale)
+          end
         end
 
         def need_accept_terms?
