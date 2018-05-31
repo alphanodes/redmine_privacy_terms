@@ -1,6 +1,8 @@
 Privacy & Terms inspectors for Redmine
 ======================================
 
+This page lists only recommendations that might be a problem for data security. It always depends on your personal use case. So always check on your own if the recommended settings make sense in your case.
+
 ### [Authentication](#authentication)
 
 Authentication activation required. Otherwise all guest users (not logged in users) are also able to view content.
@@ -20,7 +22,7 @@ Make sure your password lenght is 8 or higher. Each additional character increas
 
 ### [User role visibility all](#roles_users_visibility_all)
 
-Roles with user visibility ALL - make sure if this is really necessary.
+Roles with user visibility ALL. You should check - according to your use case - if this setting is really necessary.
 
 #### Example for user visibility
 
