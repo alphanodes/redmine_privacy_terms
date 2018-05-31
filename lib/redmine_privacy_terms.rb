@@ -31,6 +31,7 @@ module RedminePrivacyTerms
       project_id = RedminePrivacyTerms.settings[:terms_project_id]
       return if project_id.blank?
       project = Project.find_by(id: project_id)
+      return if project.blank?
       wiki_page = project.wiki.find_page(page)
       return true if wiki_page.present?
     end
@@ -39,10 +40,10 @@ module RedminePrivacyTerms
       page = RedminePrivacyTerms.settings[:terms_reject_page]
       return if page.blank?
       return true if external_page?(page)
-
       project_id = RedminePrivacyTerms.settings[:terms_reject_project_id]
       return if project_id.blank?
       project = Project.find_by(id: project_id)
+      return if project.blank?
       wiki_page = project.wiki.find_page(page)
       return true if wiki_page.present?
     end
