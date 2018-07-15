@@ -1,4 +1,4 @@
-require File.expand_path('../test_helper', __dir__)
+require File.expand_path('../../test_helper', __FILE__)
 
 class TermsControllerTest < Redmine::ControllerTest
   fixtures :projects,
@@ -9,8 +9,6 @@ class TermsControllerTest < Redmine::ControllerTest
 
   def setup
     Setting.default_language = 'en'
-    @request    = ActionController::TestRequest.new
-    @response   = ActionController::TestResponse.new
     User.current = nil
   end
 
