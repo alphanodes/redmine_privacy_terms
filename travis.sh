@@ -42,7 +42,7 @@ fi
 
 # get additionals plugin (only master supports Redmine v4)
 # git clone -b v2-stable git://github.com/alphanodes/additionals.git plugins/additionals
-git clone git://github.c om/alphanodes/additionals.git plugins/additionals
+git clone git://github.com/alphanodes/additionals.git plugins/additionals
 
 # create a link to the backlogs plugin
 ln -sf $PATH_TO_PLUGIN plugins/$NAME_OF_PLUGIN
