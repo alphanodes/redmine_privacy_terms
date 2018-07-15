@@ -40,6 +40,8 @@ else
   git checkout -b $REDMINE_GIT_TAG origin/$REDMINE_GIT_TAG
 fi
 
+# get additionals plugin
+git clone -b v2-stable git://github.com/alphanodes/additionals.git plugins/additionals
 
 # create a link to the backlogs plugin
 ln -sf $PATH_TO_PLUGIN plugins/$NAME_OF_PLUGIN
