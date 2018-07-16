@@ -36,7 +36,7 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   # - bundle exec rake redmine:load_default_data REDMINE_LANG=en
   # - bundle exec rake db:structure:dump
-  - bundle exec rake db:create
+  # - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rake redmine:plugins:migrate
 
