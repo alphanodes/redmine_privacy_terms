@@ -96,8 +96,10 @@ module RedminePrivacyTerms
       return true if page.include?('http:') || page.include?('https:')
     end
 
-    def additionals_help_admin_items
-      [{ title: 'Privacy & Terms', url: 'https://github.com/AlphaNodes/redmine_privacy_terms/blob/master/README.md' }]
+    def additionals_help_items
+      [{ title: 'Privacy & Terms',
+         url: 'https://github.com/AlphaNodes/redmine_privacy_terms/blob/master/README.md',
+         admin: true }]
     end
   end
 end
