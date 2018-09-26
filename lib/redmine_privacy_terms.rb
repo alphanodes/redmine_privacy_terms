@@ -20,7 +20,11 @@ module RedminePrivacyTerms
     end
 
     def settings
-      ActionController::Parameters.new(Setting[:plugin_redmine_privacy_terms])
+      if Rails.version >= '5.2'
+        Setting[:plugin_redmine_privacy_terms]
+      else
+        ActionController::Parameters.new(Setting[:plugin_redmine_privacy_terms])
+      end
     end
 
     def setting?(value)
