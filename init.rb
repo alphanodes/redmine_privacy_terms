@@ -7,10 +7,9 @@ Redmine::Plugin.register :redmine_privacy_terms do
   version '1.0.1'
   author 'AlphaNodes GmbH'
   author_url 'https://alphanodes.com/'
-  requires_redmine version_or_higher: '3.4.0'
 
   begin
-    requires_redmine_plugin :additionals, version_or_higher: '2.0.12'
+    requires_redmine_plugin :additionals, version_or_higher: '2.0.14'
   rescue Redmine::PluginNotFound
     raise 'Please install additionals plugin (https://github.com/alphanodes/additionals)'
   end
