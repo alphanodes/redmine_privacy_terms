@@ -3,7 +3,7 @@
   = javascript_include_tag('cookieconsent.min', plugin: 'redmine_privacy_terms')
 
   javascript:
-    $(window).load(function(){
+    window.addEventListener("load", function(){
       window.cookieconsent.initialise({
         "palette": {
           "popup": {
