@@ -8,9 +8,9 @@ fieldset.privacy-terms
   p
     = label_tag 'settings[terms_project_id]', l(:label_project)
     - if @redmine_reporting_support
-      = auto_complete_select_entries('settings[terms_project_id]',
-                                     'project',
-                                     (@settings[:terms_project_id].present? ? Project.find_by(id: @settings[:terms_project_id]) : nil))
+      = autocomplete_select_entries('settings[terms_project_id]',
+                                    'projects_reporting_autocompletes',
+                                    (@settings[:terms_project_id].present? ? Project.find_by(id: @settings[:terms_project_id]) : nil))
     - else
       = select_tag('settings[terms_project_id]',
                    project_tree_options_for_select(Project.active,
@@ -30,10 +30,10 @@ fieldset.privacy-terms
   p
     = label_tag 'settings[terms_reject_project_id]', l(:label_project)
     - if @redmine_reporting_support
-      = auto_complete_select_entries('settings[terms_reject_project_id]',
-                                     'project',
-                                     (@settings[:terms_reject_project_id].present? ? Project.find_by(id: @settings[:terms_reject_project_id]) : nil),
-                                     include_blank: true, allow_clear: true)
+      = autocomplete_select_entries('settings[terms_reject_project_id]',
+                                    'projects_reporting_autocompletes',
+                                    (@settings[:terms_reject_project_id].present? ? Project.find_by(id: @settings[:terms_reject_project_id]) : nil),
+                                    include_blank: true, allow_clear: true)
     - else
       = select_tag('settings[terms_reject_project_id]',
                    project_tree_options_for_select(Project.active,
