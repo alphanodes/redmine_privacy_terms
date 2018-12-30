@@ -1,13 +1,13 @@
 language: ruby
 
 rvm:
-  - 2.4.4
-  - 2.3.7
+  - 2.4.5
+  - 2.3.8
   - 2.2.10
 
 env:
+  - REDMINE_VER=4.0-stable DB=postgresql
   - REDMINE_VER=3.4-stable DB=postgresql
-  - REDMINE_VER=master DB=postgresql
 
 sudo: true
 cache: bundler
