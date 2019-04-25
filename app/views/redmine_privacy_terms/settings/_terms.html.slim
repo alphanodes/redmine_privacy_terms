@@ -1,6 +1,5 @@
 p
-  = label_tag 'settings[enable_terms]', l(:label_enable_terms)
-  = check_box_tag 'settings[enable_terms]', 1, @settings[:enable_terms].to_i == 1
+  = additionals_settings_checkbox :enable_terms
 
 fieldset.privacy-terms
   legend = l(:label_terms_url)
@@ -17,8 +16,7 @@ fieldset.privacy-terms
                                                    selected: @settings[:terms_project_id].present? ? Project.find_by(id: @settings[:terms_project_id]) : nil),
                    required: true)
   p
-    = label_tag 'settings[terms_page]', l(:label_wiki_page)
-    = text_field_tag 'settings[terms_page]', @settings[:terms_page], size: 50
+    = additionals_settings_textfield :terms_page, label: l(:label_wiki_page), size: 50
     - if RedminePrivacyTerms.valid_terms_url?
       '
       = link_to(l(:button_show), RedminePrivacyTerms.terms_url)
@@ -41,8 +39,7 @@ fieldset.privacy-terms
                                                    include_blank: true)
 
   p
-    = label_tag 'settings[terms_reject_page]', t(:label_terms_reject_page)
-    = text_field_tag 'settings[terms_reject_page]', @settings[:terms_reject_page], size: 50
+    = additionals_settings_textfield :terms_reject_page, size: 50
     - if RedminePrivacyTerms.valid_terms_reject_url?
       '
       = link_to(l(:button_show), RedminePrivacyTerms.terms_reject_url)
