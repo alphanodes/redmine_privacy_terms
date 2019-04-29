@@ -3,15 +3,17 @@ linters:
     max: 140
   RuboCop:
     ignored_cops:
+      - Layout/AlignArguments
       - Layout/AlignArray
       - Layout/AlignHash
       - Layout/AlignParameters
       - Layout/BlockEndNewline
-      - Layout/IndentFirstArgument
-      - Layout/IndentArray
+      - Layout/EmptyLineAfterGuardClause
       - Layout/IndentationConsistency
       - Layout/IndentationWidth
-      - Layout/IndentHash
+      - Layout/IndentFirstArgument
+      - Layout/IndentFirstArrayElement
+      - Layout/IndentFirstHashElement
       - Layout/MultilineArrayBraceLayout
       - Layout/MultilineAssignmentLayout
       - Layout/MultilineBlockLayout
@@ -30,7 +32,9 @@ linters:
       - Metrics/LineLength
       - Naming/FileName
       - Rails/OutputSafety
+      - Style/ConditionalAssignment
       - Style/FrozenStringLiteralComment
+      - Style/IdenticalConditionalBranches
       - Style/IfUnlessModifier
       - Style/Next
       - Style/WhileUntilModifier
