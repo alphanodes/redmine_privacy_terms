@@ -7,7 +7,7 @@ linters:
       - Layout/AlignHash
       - Layout/AlignParameters
       - Layout/BlockEndNewline
-      - Layout/FirstParameterIndentation
+      - Layout/IndentFirstArgument
       - Layout/IndentArray
       - Layout/IndentationConsistency
       - Layout/IndentationWidth
