@@ -4,7 +4,7 @@ Redmine::Plugin.register :redmine_privacy_terms do
   name 'Redmine Privacy & Terms'
   url 'https://github.com/alphanodes/redmine_privacy_terms'
   description 'Add privacy cookie information and terms for users'
-  version '1.0.1'
+  version '1.0.2'
   author 'AlphaNodes GmbH'
   author_url 'https://alphanodes.com/'
 
