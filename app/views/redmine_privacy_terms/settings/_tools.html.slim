@@ -2,13 +2,13 @@ fieldset.privacy-terms
   legend = l(:button_reset_terms)
 
   br
-  = hidden_field_tag 'settings[last_terms_reset]', RedminePrivacyTerms.settings[:last_terms_reset]
+  = hidden_field_tag 'settings[last_terms_reset]', RedminePrivacyTerms.setting(:last_terms_reset)
 
   p#caching-run
     = l(:label_last_terms_reset)
     ':
-    - if RedminePrivacyTerms.settings[:last_terms_reset].present?
-      = format_time(RedminePrivacyTerms.settings[:last_terms_reset], true, User.current)
+    - if RedminePrivacyTerms.setting(:last_terms_reset).present?
+      = format_time(RedminePrivacyTerms.setting(:last_terms_reset), true, User.current)
     - else
      ' -
   p

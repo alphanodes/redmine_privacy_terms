@@ -19,8 +19,13 @@ module RedminePrivacyTerms
       require_dependency 'redmine_privacy_terms/hooks'
     end
 
-    def settings
-      Additionals.settings_compatible(:plugin_redmine_privacy_terms)
+    # support with default setting as fall back
+    def setting(value)
+      if settings.key? value
+        settings[value]
+      else
+        Additionals.load_settings('redmine_privacy_terms')[value]
+      end
     end
 
     def setting?(value)
@@ -28,10 +33,10 @@ module RedminePrivacyTerms
     end
 
     def valid_terms_url?
-      page = RedminePrivacyTerms.settings[:terms_page]
+      page = setting(:terms_page)
       return if page.blank? || external_page?(page)
 
-      project_id = RedminePrivacyTerms.settings[:terms_project_id]
+      project_id = setting(:terms_project_id)
       return if project_id.blank?
 
       project = Project.find_by(id: project_id)
@@ -42,11 +47,11 @@ module RedminePrivacyTerms
     end
 
     def valid_terms_reject_url?
-      page = RedminePrivacyTerms.settings[:terms_reject_page]
+      page = setting(:terms_reject_page)
       return if page.blank?
       return true if external_page?(page)
 
-      project_id = RedminePrivacyTerms.settings[:terms_reject_project_id]
+      project_id = setting(:terms_reject_project_id)
       return if project_id.blank?
 
       project = Project.find_by(id: project_id)
@@ -57,8 +62,8 @@ module RedminePrivacyTerms
     end
 
     def terms_url(lang = nil)
-      page = RedminePrivacyTerms.settings[:terms_page]
-      project = Project.find_by(id: RedminePrivacyTerms.settings[:terms_project_id])
+      page = setting(:terms_page)
+      project = Project.find_by(id: setting(:terms_project_id))
 
       if lang
         i18n_page = additionals_title_for_locale(page, lang)
@@ -74,10 +79,10 @@ module RedminePrivacyTerms
     end
 
     def terms_reject_url(lang = nil)
-      page = RedminePrivacyTerms.settings[:terms_reject_page]
+      page = setting(:terms_reject_page)
       return page if external_page?(page)
 
-      project = Project.find_by(id: RedminePrivacyTerms.settings[:terms_reject_project_id])
+      project = Project.find_by(id: setting(:terms_reject_project_id))
 
       if lang
         i18n_page = additionals_title_for_locale(page, lang)
@@ -100,6 +105,12 @@ module RedminePrivacyTerms
       [{ title: 'Privacy & Terms',
          url: 'https://github.com/AlphaNodes/redmine_privacy_terms/blob/master/README.md',
          admin: true }]
+    end
+
+    private
+
+    def settings
+      Additionals.settings_compatible(:plugin_redmine_privacy_terms)
     end
   end
 end

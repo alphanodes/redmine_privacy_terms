@@ -7,20 +7,20 @@
       window.cookieconsent.initialise({
         "palette": {
           "popup": {
-            "background": "#{RedminePrivacyTerms.settings[:cookieconsent_popup_background]}",
-            "text": "#{RedminePrivacyTerms.settings[:cookieconsent_popup_text]}"
+            "background": "#{RedminePrivacyTerms.setting(:cookieconsent_popup_background)}",
+            "text": "#{RedminePrivacyTerms.setting(:cookieconsent_popup_text)}"
           },
           "button": {
-            "background": "#{RedminePrivacyTerms.settings[:cookieconsent_button_background]}",
-            "text": "#{RedminePrivacyTerms.settings[:cookieconsent_button_text]}"
+            "background": "#{RedminePrivacyTerms.setting(:cookieconsent_button_background)}",
+            "text": "#{RedminePrivacyTerms.setting(:cookieconsent_button_text)}"
           }
         },
         "position": "top",
         "content": {
-          "message": "#{RedminePrivacyTerms.settings[:cookieconsent_message]}",
-          "dismiss": "#{RedminePrivacyTerms.settings[:cookieconsent_dismiss]}",
-          "link": "#{RedminePrivacyTerms.settings[:cookieconsent_link]}",
-          "href": "#{RedminePrivacyTerms.settings[:cookieconsent_href]}"
+          "message": "#{RedminePrivacyTerms.setting(:cookieconsent_message)}",
+          "dismiss": "#{RedminePrivacyTerms.setting(:cookieconsent_dismiss)}",
+          "link": "#{RedminePrivacyTerms.setting(:cookieconsent_link)}",
+          "href": "#{RedminePrivacyTerms.setting(:cookieconsent_href)}"
         }
       })});
 
