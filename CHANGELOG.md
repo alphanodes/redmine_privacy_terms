@@ -4,7 +4,7 @@ Changelog
 v1.0.2
 ------
 
-- Ruby 2.3.0 or newer is required
+- Ruby 2.4.0 or newer is required
 
 v1.0.1
 ------

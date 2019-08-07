@@ -19,8 +19,12 @@ Redmine::Plugin.register :redmine_privacy_terms do
   settings default: Additionals.load_settings('redmine_privacy_terms'), partial: 'redmine_privacy_terms/settings/settings'
 end
 
-if ActiveRecord::Base.connection.table_exists?(:settings)
-  Rails.configuration.to_prepare do
-    RedminePrivacyTerms.setup
+begin
+  if ActiveRecord::Base.connection.table_exists?(Setting.table_name)
+    Rails.configuration.to_prepare do
+      RedminePrivacyTerms.setup
+    end
   end
+rescue ActiveRecord::NoDatabaseError
+  Rails.logger.error 'database not created yet'
 end
