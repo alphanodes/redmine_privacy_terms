@@ -1,19 +1,33 @@
 language: ruby
+dist: xenial
 
 rvm:
-  - 2.4.5
-  - 2.3.8
-  - 2.2.10
+  - 2.6.3
+  - 2.5.5
+  - 2.4.6
+
+services:
+  - mysql
+  - postgresql
 
 env:
   - REDMINE_VER=4.0-stable DB=postgresql
   - REDMINE_VER=3.4-stable DB=postgresql
+  - REDMINE_VER=4.0-stable DB=mysql
+  - REDMINE_VER=3.4-stable DB=mysql
 
 sudo: true
-cache: bundler
 
-addons:
-  postgresql: "9.6"
+matrix:
+  exclude:
+  - rvm: 2.6.3
+    env: REDMINE_VER=3.4-stable DB=mysql
+  - rvm: 2.6.3
+    env: REDMINE_VER=3.4-stable DB=postgresql
+  - rvm: 2.5.5
+    env: REDMINE_VER=3.4-stable DB=mysql
+  - rvm: 2.5.5
+    env: REDMINE_VER=3.4-stable DB=postgresql
 
 before_install:
   - export PLUGIN_NAME=redmine_privacy_terms
@@ -24,19 +38,12 @@ before_install:
   - cd $REDMINE_PATH
   - if [[ "$REDMINE_VER" != "master" ]]; then git checkout -b $REDMINE_VER origin/$REDMINE_VER; fi
   - ln -s $TRAVIS_BUILD_DIR $REDMINE_PATH/plugins/$PLUGIN_NAME
-  # get additionals plugin (only master supports Redmine v4)
-  # git clone -b v2-stable git://github.com/alphanodes/additionals.git plugins/additionals
-  - git clone git://github.com/alphanodes/additionals.git $REDMINE_PATH/plugins/additionals
+  - git clone -b v2-stable git://github.com/alphanodes/additionals.git $REDMINE_PATH/plugins/additionals
   - cp $TRAVIS_BUILD_DIR/test/support/additional_environment.rb $REDMINE_PATH/config/
   - cp $TRAVIS_BUILD_DIR/test/support/database-$DB-travis.yml $REDMINE_PATH/config/database.yml
 
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  # - bundle exec rake redmine:load_default_data REDMINE_LANG=en
-  # - bundle exec rake db:structure:dump
-  # - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  - bundle exec rake redmine:plugins:migrate
+  - bundle exec rake db:create db:migrate redmine:plugins:migrate
 
 script:
   - export SKIP_COVERAGE=1
