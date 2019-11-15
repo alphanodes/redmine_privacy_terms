@@ -28,9 +28,9 @@ class I18nTest < ActiveSupport::TestCase
     end
     # check if parse error exists
     ::I18n.locale = 'de'
-    assert_equal 'Externe URLs', l(:label_external_urls)
+    assert_equal 'Ergebnis', l(:field_privacy_terms_result)
     ::I18n.locale = 'en'
-    assert_equal 'External urls', l(:label_external_urls)
+    assert_equal 'Result', l(:field_privacy_terms_result)
 
     set_language_if_valid('en')
   end
