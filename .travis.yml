@@ -2,9 +2,9 @@ language: ruby
 dist: xenial
 
 rvm:
-  - 2.6.3
-  - 2.5.5
-  - 2.4.6
+  - 2.6.5
+  - 2.5.7
+  - 2.4.9
 
 services:
   - mysql
@@ -20,13 +20,13 @@ sudo: true
 
 matrix:
   exclude:
-  - rvm: 2.6.3
+  - rvm: 2.6.5
     env: REDMINE_VER=3.4-stable DB=mysql
-  - rvm: 2.6.3
+  - rvm: 2.6.5
     env: REDMINE_VER=3.4-stable DB=postgresql
-  - rvm: 2.5.5
+  - rvm: 2.5.7
     env: REDMINE_VER=3.4-stable DB=mysql
-  - rvm: 2.5.5
+  - rvm: 2.5.7
     env: REDMINE_VER=3.4-stable DB=postgresql
 
 before_install:
