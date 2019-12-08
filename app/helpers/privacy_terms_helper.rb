@@ -70,10 +70,10 @@ module PrivacyTermsHelper
 
   def inspect_bool_result(value, options = {})
     options[:down_icon] = 'far_thumbs-down' if options[:down_icon].blank?
-    options[:down_class] = 'inspect-problem' if options[:down_class].blank?
+    options[:down_class] = 'additionals-number-negative inspect-problem' if options[:down_class].blank?
 
     if value
-      font_awesome_icon('far_thumbs-up', class: 'inspect-good')
+      font_awesome_icon('far_thumbs-up', class: 'additionals-number-positive inspect-good')
     else
       font_awesome_icon(options[:down_icon], class: options[:down_class])
     end

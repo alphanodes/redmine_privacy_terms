@@ -35,14 +35,6 @@
   padding-bottom: 0.5em;
 }
 
-.inspect-good {
-  color: green;
-}
-
-.inspect-problem {
-  color: red;
-}
-
 .inspect-info {
   font-style: italic;
 }
