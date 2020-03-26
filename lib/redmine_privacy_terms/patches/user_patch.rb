@@ -1,15 +1,7 @@
-module RedminePrivacyTerms
-  module Patches
-    module UserPatch
-      def self.included(base)
-        base.send(:include, InstanceMethods)
-      end
+require_dependency 'user'
 
-      module InstanceMethods
-        def accept_terms?
-          accept_terms_at
-        end
-      end
-    end
+class User
+  def accept_terms?
+    accept_terms_at
   end
 end
