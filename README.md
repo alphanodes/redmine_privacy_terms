@@ -1,7 +1,7 @@
 Privacy & Terms plugin for Redmine
 ==================================
 
-[![Rate at redmine.org](https://img.shields.io/badge/rate%20at-redmine.org-blue.svg?style=fla)](https://www.redmine.org/plugins/redmine_privacy_terms) [![Build Status](https://travis-ci.org/AlphaNodes/redmine_privacy_terms.svg?branch=master)](https://travis-ci.org/AlphaNodes/redmine_privacy_terms)
+[![Rate at redmine.org](https://img.shields.io/badge/rate%20at-redmine.org-blue.svg?style=fla)](https://www.redmine.org/plugins/redmine_privacy_terms) [![Build Status](https://travis-ci.org/AlphaNodes/redmine_privacy_terms.svg?branch=master)](https://travis-ci.org/AlphaNodes/redmine_privacy_terms) ![Run Linters](https://github.com/AlphaNodes/redmine_privacy_terms/workflows/Run%20Linters/badge.svg)
 
 Features
 --------
