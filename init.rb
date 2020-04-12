@@ -1,5 +1,3 @@
-require_dependency 'redmine_privacy_terms'
-
 Redmine::Plugin.register :redmine_privacy_terms do
   name 'Redmine Privacy & Terms'
   url 'https://github.com/alphanodes/redmine_privacy_terms'
@@ -19,12 +17,6 @@ Redmine::Plugin.register :redmine_privacy_terms do
   settings default: Additionals.load_settings('redmine_privacy_terms'), partial: 'redmine_privacy_terms/settings/settings'
 end
 
-begin
-  if ActiveRecord::Base.connection.table_exists?(Setting.table_name)
-    Rails.configuration.to_prepare do
-      RedminePrivacyTerms.setup
-    end
-  end
-rescue ActiveRecord::NoDatabaseError
-  Rails.logger.error 'database not created yet'
+Rails.configuration.to_prepare do
+  RedminePrivacyTerms.setup
 end

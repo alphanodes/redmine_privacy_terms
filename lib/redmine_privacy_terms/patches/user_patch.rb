@@ -1,7 +1,9 @@
-require_dependency 'user'
-
-class User
-  def accept_terms?
-    accept_terms_at
+module RedminePrivacyTerms
+  module Patches
+    module UserPatch
+      def accept_terms?
+        accept_terms_at
+      end
+    end
   end
 end

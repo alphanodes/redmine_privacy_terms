@@ -5,8 +5,9 @@ module RedminePrivacyTerms
     include Additionals::Helpers
 
     def setup
-      require_dependency 'redmine_privacy_terms/patches/application_controller_patch'
-      require_dependency 'redmine_privacy_terms/patches/user_patch'
+      # Patches
+      Additionals.patch(%w[ApplicationController
+                           User], 'redmine_privacy_terms')
 
       # Helper
       SettingsController.send :helper, PrivacyTermsHelper
