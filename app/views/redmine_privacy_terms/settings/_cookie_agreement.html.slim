@@ -14,7 +14,7 @@ p
   = label_tag 'settings[cookieconsent_button_text]', t(:label_cookieconsent_button_text)
   = color_field_tag 'settings[cookieconsent_button_text]', @settings[:cookieconsent_button_text], size: 10
 p
-  = additionals_settings_textarea :cookieconsent_message, rows: 5
+  = additionals_settings_textarea :cookieconsent_message
 p
   = additionals_settings_textfield :cookieconsent_dismiss, size: 50
 p
