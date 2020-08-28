@@ -3,18 +3,18 @@ os: linux
 dist: xenial
 
 rvm:
-  - 2.6.5
-  - 2.5.7
-  - 2.4.9
+  - 2.6.6
+  - 2.5.8
+  - 2.4.10
 
 services:
   - mysql
   - postgresql
 
 env:
-  - REDMINE_VER=4.0-stable DB=postgresql
+  - REDMINE_VER=4.1-stable DB=postgresql
   - REDMINE_VER=master DB=postgresql
-  - REDMINE_VER=4.0-stable DB=mysql
+  - REDMINE_VER=4.1-stable DB=mysql
   - REDMINE_VER=master DB=mysql
 
 before_install:
@@ -26,7 +26,9 @@ before_install:
   - git clone $REDMINE_GIT_REPO $REDMINE_PATH
   - cd $REDMINE_PATH
   - if [[ "$REDMINE_VER" != "master" ]]; then git checkout -b $REDMINE_VER origin/$REDMINE_VER; fi
-  - if [[ "$REDMINE_VER" != "master" ]]; then cp $TRAVIS_BUILD_DIR/test/support/Gemfile.local $REDMINE_PATH; fi
+  - sed -i '/rubocop/d' $REDMINE_PATH/Gemfile
+  - rm -f $REDMINE_PATH/.rubocop*
+  - cp $TRAVIS_BUILD_DIR/test/support/Gemfile.local $REDMINE_PATH
   - ln -s $TRAVIS_BUILD_DIR $REDMINE_PATH/plugins/$PLUGIN_NAME
   - git clone git://github.com/alphanodes/additionals.git $REDMINE_PATH/plugins/additionals
   - cp $TRAVIS_BUILD_DIR/test/support/additional_environment.rb $REDMINE_PATH/config/
