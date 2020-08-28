@@ -9,11 +9,11 @@ if ENV['COVERAGE']
 
   SimpleCov.start :rails do
     add_filter 'init.rb'
-    root File.expand_path(File.dirname(__FILE__) + '/..')
+    root File.expand_path "#{File.dirname __FILE__}/.."
   end
 end
 
-require File.expand_path(File.dirname(__FILE__) + '/../../../test/test_helper')
+require File.expand_path "#{File.dirname __FILE__}/../../../test/test_helper"
 
 module RedminePrivacyTerms
   class TestCase
