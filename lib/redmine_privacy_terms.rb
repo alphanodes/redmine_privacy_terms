@@ -110,7 +110,7 @@ module RedminePrivacyTerms
     private
 
     def settings
-      Additionals.settings_compatible(:plugin_redmine_privacy_terms)
+      Setting[:plugin_redmine_privacy_terms]
     end
   end
 end
