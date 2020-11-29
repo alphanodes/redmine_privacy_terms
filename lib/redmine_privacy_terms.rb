@@ -13,7 +13,7 @@ module RedminePrivacyTerms
       SettingsController.send :helper, PrivacyTermsHelper
 
       # Macros
-      Additionals.load_macros(%w[terms_accept terms_reject], 'redmine_privacy_terms')
+      Additionals.load_macros 'redmine_privacy_terms'
 
       # hooks
       require_dependency 'redmine_privacy_terms/hooks'
