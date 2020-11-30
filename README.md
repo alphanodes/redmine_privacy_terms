@@ -1,7 +1,7 @@
 Privacy & Terms plugin for Redmine
 ==================================
 
-[![Rate at redmine.org](https://img.shields.io/badge/rate%20at-redmine.org-blue.svg?style=fla)](https://www.redmine.org/plugins/redmine_privacy_terms) [![Build Status](https://travis-ci.org/AlphaNodes/redmine_privacy_terms.svg?branch=master)](https://travis-ci.org/AlphaNodes/redmine_privacy_terms) ![Run Linters](https://github.com/AlphaNodes/redmine_privacy_terms/workflows/Run%20Linters/badge.svg)
+[![Rate at redmine.org](https://img.shields.io/badge/rate%20at-redmine.org-blue.svg?style=fla)](https://www.redmine.org/plugins/redmine_privacy_terms) [![Tests](https://github.com/AlphaNodes/redmine_privacy_terms/workflows/Tests/badge.svg)](https://github.com/AlphaNodes/redmine_privacy_terms/actions?query=workflow%3A"Run+Tests) ![Run Linters](https://github.com/AlphaNodes/redmine_privacy_terms/workflows/Run%20Linters/badge.svg)
 
 Features
 --------
@@ -16,7 +16,7 @@ Features
 Requirements
 ------------
 
-* Redmine version >= 3.4.0
+* Redmine version >= 4.1.0
 * Redmine Plugin: [additionals](https://github.com/alphanodes/additionals)
 * Ruby version >= 2.4.0
 
