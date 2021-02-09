@@ -34,14 +34,14 @@ module PrivacyTermsHelper
             result: inspect_bool_result(inactive_users.zero?) }
 
     if RedminePrivacyTerms.setting?(:enable_terms)
-      terms_not_accepted = User.active.where(admin: false).where('accept_terms_at IS NULL').count
+      terms_not_accepted = User.active.where(admin: false).where(accept_terms_at: nil).count
       rc << { name: l(:inspect_user_terms_not_accepted),
               id: 'user_terms_not_accepted',
               value: terms_not_accepted,
               result: inspect_bool_result(terms_not_accepted.zero?) }
     end
 
-    never_logedin_users = User.active.where('last_login_on IS NULL').count
+    never_logedin_users = User.active.where(last_login_on: nil).count
     rc << { name: l(:inspect_never_logedin_users),
             id: 'never_logedin_users',
             value: never_logedin_users,
