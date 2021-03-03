@@ -1,3 +1,5 @@
+require 'redmine_privacy_terms/version'
+
 module RedminePrivacyTerms
   INSPECTOR_DOC_URL = 'https://github.com/alphanodes/redmine_privacy_terms/blob/master/INSPECTORS.md'.freeze
 
