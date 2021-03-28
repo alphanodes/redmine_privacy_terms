@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RedminePrivacyTerms
   module WikiMacros
     Redmine::WikiFormatting::Macros.register do
@@ -23,6 +25,7 @@ module RedminePrivacyTerms
                   options = extract_macro_options(args, *additionals_titles_for_locale(:title)).last
                   additionals_i18n_title(options, :title)
                 end
+
         link_to(title.presence || l(:label_default_accept_terms),
                 accept_terms_path,
                 class: 'accept-terms-button')

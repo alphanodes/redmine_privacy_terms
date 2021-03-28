@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RedminePrivacyTerms
   class RedminePrivacyTermssHookListener < Redmine::Hook::ViewListener
     render_on(:view_layouts_base_html_head, partial: 'redmine_privacy_terms/html_head')

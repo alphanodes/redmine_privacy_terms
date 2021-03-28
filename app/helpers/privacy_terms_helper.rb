@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PrivacyTermsHelper
   def privacy_terms_inspect_results
     rc = []
@@ -62,9 +64,9 @@ module PrivacyTermsHelper
 
   def inspect_bool_value(value)
     if value
-      l(:general_text_Yes)
+      l :general_text_Yes
     else
-      l(:general_text_No)
+      l :general_text_No
     end
   end
 

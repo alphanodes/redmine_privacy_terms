@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+raise "\n\033[31maredmine_privacy_terms requires ruby 2.6 or newer. Please update your ruby version.\033[0m" if RUBY_VERSION < '2.6'
+
 Redmine::Plugin.register :redmine_privacy_terms do
   name 'Redmine Privacy & Terms'
   url 'https://github.com/alphanodes/redmine_privacy_terms'

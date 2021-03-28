@@ -6,7 +6,7 @@ Rails:
   Enabled: true
 
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.6
   TargetRailsVersion: 5.2
   NewCops: enable
 
@@ -34,18 +34,6 @@ Metrics/ModuleLength:
 Metrics/PerceivedComplexity:
   Max: 25
 
-Rails/ApplicationJob:
-  Enabled: false
-
-Rails/ApplicationRecord:
-  Enabled: false
-
-Rails/CreateTableWithTimestamps:
-  Enabled: false
-
-Rails/HelperInstanceVariable:
-  Enabled: false
-
 Rails/SkipsModelValidations:
   Enabled: false
 
@@ -55,20 +43,7 @@ Performance/ChainArrayAllocation:
 Style/AutoResourceCleanup:
   Enabled: true
 
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
 Style/Documentation:
-  Enabled: false
-
-# required for travis/ci (symbolic links problem)
-Style/ExpandPathArguments:
-  Enabled: false
-
-Style/HashTransformKeys:
-  Enabled: false
-
-Style/HashTransformValues:
   Enabled: false
 
 Naming/VariableNumber:

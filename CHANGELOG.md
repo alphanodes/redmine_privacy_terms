@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v1.0.3
+------
+
+- Redmine 4.2 support
+- Ruby 2.6.0 or newer is required
+
 v1.0.2
 ------
 

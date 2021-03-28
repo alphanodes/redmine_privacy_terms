@@ -12,14 +12,12 @@ Features
 * multilingual support
 * API support (if terms are required, API call throw forbitten till user accept terms)
 
-
 Requirements
 ------------
 
 * Redmine version >= 4.1.0
 * Redmine Plugin: [additionals](https://github.com/alphanodes/additionals)
-* Ruby version >= 2.4.0
-
+* Ruby version >= 2.6
 
 Installation
 ------------
@@ -33,7 +31,6 @@ Install ``redmine_privacy_terms`` plugin for `Redmine`
     bundle exec rake redmine:plugins:migrate RAILS_ENV=production
 
 Restart Redmine (application server) and you should see the plugin show up in the Plugins page.
-
 
 Usage
 -----
@@ -64,12 +61,9 @@ The plugin offers settings for:
 
 The "Inspect" section displays information on possible data protection problems you should try to fix.
 
-
-
 ### Permissions
 
 There is a new permission "Show terms condition" available. Members with this permission can see the terms conditions of other users. A user can always see its own terms condition at his profile (if terms are activated).
-
 
 Available macros
 ----------------
@@ -85,8 +79,6 @@ For multilange support use title_de, title_es, etc..
 You can use title parameter, to overwrite button text. Eg. {{terms_reject(title=Let me out)}}
 
 For multilange support use title_de, title_es, etc..
-
-
 
 Uninstall
 ---------

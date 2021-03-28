@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RedminePrivacyTerms
   module WikiMacros
     Redmine::WikiFormatting::Macros.register do

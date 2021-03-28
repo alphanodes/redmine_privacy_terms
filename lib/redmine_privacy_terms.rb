@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'redmine_privacy_terms/version'
 
 module RedminePrivacyTerms
-  INSPECTOR_DOC_URL = 'https://github.com/alphanodes/redmine_privacy_terms/blob/master/INSPECTORS.md'.freeze
+  INSPECTOR_DOC_URL = 'https://github.com/alphanodes/redmine_privacy_terms/blob/master/INSPECTORS.md'
 
   class << self
     include Additionals::Helpers
@@ -31,41 +33,41 @@ module RedminePrivacyTerms
     end
 
     def setting?(value)
-      Additionals.true?(settings[value])
+      Additionals.true? settings[value]
     end
 
     def valid_terms_url?
-      page = setting(:terms_page)
+      page = setting :terms_page
       return if page.blank? || external_page?(page)
 
-      project_id = setting(:terms_project_id)
+      project_id = setting :terms_project_id
       return if project_id.blank?
 
-      project = Project.find_by(id: project_id)
+      project = Project.find_by id: project_id
       return if project.blank?
 
-      wiki_page = project.wiki.find_page(page)
+      wiki_page = project.wiki.find_page page
       return true if wiki_page.present?
     end
 
     def valid_terms_reject_url?
-      page = setting(:terms_reject_page)
+      page = setting :terms_reject_page
       return if page.blank?
       return true if external_page?(page)
 
-      project_id = setting(:terms_reject_project_id)
+      project_id = setting :terms_reject_project_id
       return if project_id.blank?
 
-      project = Project.find_by(id: project_id)
+      project = Project.find_by id: project_id
       return if project.blank?
 
-      wiki_page = project.wiki.find_page(page)
+      wiki_page = project.wiki.find_page page
       return true if wiki_page.present?
     end
 
     def terms_url(lang = nil)
-      page = setting(:terms_page)
-      project = Project.find_by(id: setting(:terms_project_id))
+      page = setting :terms_page
+      project = Project.find_by id: setting(:terms_project_id)
 
       if lang
         i18n_page = additionals_title_for_locale(page, lang)
