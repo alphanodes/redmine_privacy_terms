@@ -93,7 +93,6 @@ jobs:
         run: |
           sed -i '/rubocop/d' Gemfile
           rm -f .rubocop*
-          cp plugins/redmine_privacy_terms/test/support/Gemfile.local Gemfile.local
           cp plugins/redmine_privacy_terms/test/support/database-${{ matrix.db }}.yml config/database.yml
           cp plugins/redmine_privacy_terms/test/support/configuration.yml config/configuration.yml
 
