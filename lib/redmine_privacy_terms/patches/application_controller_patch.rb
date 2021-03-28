@@ -37,6 +37,7 @@ module RedminePrivacyTerms
           [accept_terms_path,
            reject_terms_path,
            signout_path,
+           my_password_path,
            RedminePrivacyTerms.terms_url(::I18n.locale),
            RedminePrivacyTerms.terms_reject_url(::I18n.locale)].include?(request.original_fullpath)
         end
