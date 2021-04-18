@@ -17,7 +17,7 @@ class TermsController < ApplicationController
 
   def reset
     User.update_all accept_terms_at: nil
-    Setting.plugin_redmine_privacy_terms = RedminePrivacyTerms.settings.merge(last_terms_reset: Time.now.utc.to_s)
+    Setting.plugin_redmine_privacy_terms = RedminePrivacyTerms.settings.merge last_terms_reset: Time.now.utc.to_s
     flash[:notice] = l :notice_terms_reset_successfully
     redirect_to plugin_settings_path(id: 'redmine_privacy_terms', tab: 'tools')
   end

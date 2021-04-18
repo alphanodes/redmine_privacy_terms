@@ -3,3 +3,4 @@
 coverage/
 .project
 .settings/
+.enable_dev

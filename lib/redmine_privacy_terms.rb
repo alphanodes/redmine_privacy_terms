@@ -53,7 +53,7 @@ module RedminePrivacyTerms
     def valid_terms_reject_url?
       page = setting :terms_reject_page
       return if page.blank?
-      return true if external_page?(page)
+      return true if external_page? page
 
       project_id = setting :terms_reject_project_id
       return if project_id.blank?
@@ -70,8 +70,8 @@ module RedminePrivacyTerms
       project = Project.find_by id: setting(:terms_project_id)
 
       if lang
-        i18n_page = additionals_title_for_locale(page, lang)
-        wiki_page = project.wiki.find_page(i18n_page)
+        i18n_page = additionals_title_for_locale page, lang
+        wiki_page = project.wiki.find_page i18n_page
         page = i18n_page if wiki_page.present?
       end
 
@@ -83,14 +83,14 @@ module RedminePrivacyTerms
     end
 
     def terms_reject_url(lang = nil)
-      page = setting(:terms_reject_page)
-      return page if external_page?(page)
+      page = setting :terms_reject_page
+      return page if external_page? page
 
-      project = Project.find_by(id: setting(:terms_reject_project_id))
+      project = Project.find_by id: setting(:terms_reject_project_id)
 
       if lang
-        i18n_page = additionals_title_for_locale(page, lang)
-        wiki_page = project.wiki.find_page(i18n_page)
+        i18n_page = additionals_title_for_locale page, lang
+        wiki_page = project.wiki.find_page i18n_page
         page = i18n_page if wiki_page.present?
       end
 
@@ -106,8 +106,8 @@ module RedminePrivacyTerms
     end
 
     def additionals_help_items
-      [{ title: 'Privacy & Terms',
-         url: 'https://github.com/AlphaNodes/redmine_privacy_terms/blob/master/README.md',
+      [{ title: 'Redmine Git Hosting',
+         url: 'http://redmine-git-hosting.io/get_started/',
          admin: true }]
     end
 

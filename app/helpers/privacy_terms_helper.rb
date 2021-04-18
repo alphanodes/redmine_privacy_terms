@@ -35,7 +35,7 @@ module PrivacyTermsHelper
             value: inactive_users,
             result: inspect_bool_result(inactive_users.zero?) }
 
-    if RedminePrivacyTerms.setting?(:enable_terms)
+    if RedminePrivacyTerms.setting? :enable_terms
       terms_not_accepted = User.active.where(admin: false).where(accept_terms_at: nil).count
       rc << { name: l(:inspect_user_terms_not_accepted),
               id: 'user_terms_not_accepted',
@@ -70,14 +70,14 @@ module PrivacyTermsHelper
     end
   end
 
-  def inspect_bool_result(value, options = {})
-    options[:down_icon] = 'far_thumbs-down' if options[:down_icon].blank?
-    options[:down_class] = 'additionals-number-negative inspect-problem' if options[:down_class].blank?
+  def inspect_bool_result(value, down_icon: nil, down_class: nil)
+    down_icon ||= 'far_thumbs-down'
+    down_class ||= 'additionals-number-negative inspect-problem'
 
     if value
-      font_awesome_icon('far_thumbs-up', class: 'additionals-number-positive inspect-good')
+      font_awesome_icon 'far_thumbs-up', class: 'additionals-number-positive inspect-good'
     else
-      font_awesome_icon(options[:down_icon], class: options[:down_class])
+      font_awesome_icon down_icon, class: down_class
     end
   end
 end

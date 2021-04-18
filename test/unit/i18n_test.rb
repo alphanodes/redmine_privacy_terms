@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require File.expand_path '../test_helper', __dir__
+require File.expand_path '../../test_helper', __FILE__
 
 class I18nTest < ActiveSupport::TestCase
   include Redmine::I18n
@@ -30,6 +30,6 @@ class I18nTest < ActiveSupport::TestCase
     ::I18n.locale = 'en'
     assert_equal 'Result', l(:field_privacy_terms_result)
 
-    set_language_if_valid('en')
+    set_language_if_valid 'en'
   end
 end

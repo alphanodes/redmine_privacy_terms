@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-$VERBOSE = nil
-
 if ENV['COVERAGE']
   require 'simplecov'
   require 'simplecov-rcov'
@@ -28,7 +26,7 @@ module RedminePrivacyTerms
       end
 
       Project.where(id: [1, 2]).each do |project|
-        EnabledModule.create(project: project, name: 'wiki')
+        EnabledModule.create project: project, name: 'wiki'
       end
     end
   end

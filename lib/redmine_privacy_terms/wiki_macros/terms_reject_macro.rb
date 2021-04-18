@@ -23,7 +23,7 @@ module RedminePrivacyTerms
       macro :terms_reject do |_obj, args|
         title = if args.any?
                   options = extract_macro_options(args, *additionals_titles_for_locale(:title)).last
-                  additionals_i18n_title(options, :title)
+                  additionals_i18n_title options, :title
                 end
         link_to(title.presence || l(:label_default_reject_terms),
                 reject_terms_path,
