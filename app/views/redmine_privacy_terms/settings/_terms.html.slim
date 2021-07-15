@@ -2,7 +2,7 @@ p
   = additionals_settings_checkbox :enable_terms
 
 fieldset.privacy-terms
-  legend = l(:label_terms_url)
+  legend = l :label_terms_url
 
   p
     = label_tag 'settings[terms_project_id]', l(:label_project)
@@ -20,10 +20,10 @@ fieldset.privacy-terms
     - if RedminePrivacyTerms.valid_terms_url?
       '
       = link_to(l(:button_show), RedminePrivacyTerms.terms_url)
-    em.info = l(:terms_url_info)
+    em.info = l :terms_url_info
 
 fieldset.privacy-terms
-  legend = l(:label_terms_reject_url)
+  legend = l :label_terms_reject_url
 
   p
     = label_tag 'settings[terms_reject_project_id]', l(:label_project)
@@ -43,4 +43,4 @@ fieldset.privacy-terms
     - if RedminePrivacyTerms.valid_terms_reject_url?
       '
       = link_to(l(:button_show), RedminePrivacyTerms.terms_reject_url)
-    em.info = l(:terms_reject_url_info)
+    em.info = l :terms_reject_url_info

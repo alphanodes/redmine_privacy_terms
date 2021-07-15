@@ -20,15 +20,18 @@ class I18nTest < ActiveSupport::TestCase
 
   def test_locales_validness
     lang_files_count = Dir[Rails.root.join('plugins/redmine_privacy_terms/config/locales/*.yml')].size
-    assert_equal lang_files_count, 2
+
+    assert_equal 2, lang_files_count
+
     valid_languages.each do |lang|
       assert set_language_if_valid(lang)
+      case lang.to_s
+      when 'en'
+        assert_equal 'Result', l(:field_privacy_terms_result)
+      when 'de'
+        assert_not l(:field_privacy_terms_result) == 'Result', lang
+      end
     end
-    # check if parse error exists
-    ::I18n.locale = 'de'
-    assert_equal 'Ergebnis', l(:field_privacy_terms_result)
-    ::I18n.locale = 'en'
-    assert_equal 'Result', l(:field_privacy_terms_result)
 
     set_language_if_valid 'en'
   end
