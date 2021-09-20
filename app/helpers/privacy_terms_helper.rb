@@ -5,7 +5,7 @@ module PrivacyTermsHelper
     rc = []
     rc << { name: l(:label_authentication),
             id: 'authentication',
-            value: inspect_bool_value(Setting.login_required?),
+            value: format_yes(Setting.login_required?),
             result: inspect_bool_result(Setting.login_required?) }
     rc << { name: l(:setting_protocol),
             id: 'protocol',
@@ -61,14 +61,6 @@ module PrivacyTermsHelper
   end
 
   private
-
-  def inspect_bool_value(value)
-    if value
-      l :general_text_Yes
-    else
-      l :general_text_No
-    end
-  end
 
   def inspect_bool_result(value, down_icon: nil, down_class: nil)
     down_icon ||= 'far_thumbs-down'

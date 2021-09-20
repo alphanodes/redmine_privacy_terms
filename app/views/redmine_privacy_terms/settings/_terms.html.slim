@@ -6,7 +6,7 @@ fieldset.privacy-terms
 
   p
     = label_tag 'settings[terms_project_id]', l(:label_project)
-    - if @redmine_reporting_support
+    - if AdditionalsPlugin.active_reporting?
       = autocomplete_select_entries('settings[terms_project_id]',
                                     'projects_reporting_autocompletes',
                                     (@settings[:terms_project_id].present? ? Project.find_by(id: @settings[:terms_project_id]) : nil))
@@ -27,7 +27,7 @@ fieldset.privacy-terms
 
   p
     = label_tag 'settings[terms_reject_project_id]', l(:label_project)
-    - if @redmine_reporting_support
+    - if AdditionalsPlugin.active_reporting?
       = autocomplete_select_entries('settings[terms_reject_project_id]',
                                     'projects_reporting_autocompletes',
                                     (@settings[:terms_reject_project_id].present? ? Project.find_by(id: @settings[:terms_reject_project_id]) : nil),
