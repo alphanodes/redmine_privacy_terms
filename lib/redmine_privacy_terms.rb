@@ -46,7 +46,7 @@ module RedminePrivacyTerms
       project = Project.find_by id: project_id
       return if project.blank?
 
-      wiki_page = project.wiki.find_page page
+      wiki_page = project.wiki&.find_page page
       return true if wiki_page.present?
     end
 
@@ -61,7 +61,7 @@ module RedminePrivacyTerms
       project = Project.find_by id: project_id
       return if project.blank?
 
-      wiki_page = project.wiki.find_page page
+      wiki_page = project.wiki&.find_page page
       return true if wiki_page.present?
     end
 
@@ -71,7 +71,7 @@ module RedminePrivacyTerms
 
       if lang
         i18n_page = additionals_title_for_locale page, lang
-        wiki_page = project.wiki.find_page i18n_page
+        wiki_page = project.wiki&.find_page i18n_page
         page = i18n_page if wiki_page.present?
       end
 
@@ -90,7 +90,7 @@ module RedminePrivacyTerms
 
       if lang
         i18n_page = additionals_title_for_locale page, lang
-        wiki_page = project.wiki.find_page i18n_page
+        wiki_page = project.wiki&.find_page i18n_page
         page = i18n_page if wiki_page.present?
       end
 
