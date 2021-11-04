@@ -55,7 +55,7 @@ module PrivacyTermsHelper
             value: public_projects,
             result: inspect_bool_result(public_projects.zero?,
                                         down_icon: 'fas_info',
-                                        down_class: 'inspect-info') }
+                                        down_class: 'summary') }
 
     rc
   end
