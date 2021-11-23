@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-require 'redmine_privacy_terms/version'
-
 module RedminePrivacyTerms
+  VERSION = '1.0.3'
   INSPECTOR_DOC_URL = 'https://github.com/alphanodes/redmine_privacy_terms/blob/master/INSPECTORS.md'
 
   class << self
@@ -20,7 +19,7 @@ module RedminePrivacyTerms
       Additionals.load_macros 'redmine_privacy_terms'
 
       # hooks
-      require_dependency 'redmine_privacy_terms/hooks'
+      RedminePrivacyTerms::Hooks
     end
 
     # support with default setting as fall back
