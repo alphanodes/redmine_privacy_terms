@@ -8,18 +8,23 @@ module RedminePrivacyTerms
     include Additionals::Helpers
 
     def setup
+      loader = AdditionalsLoader.new plugin_id: 'redmine_privacy_terms'
+
       # Patches
-      Additionals.patch(%w[ApplicationController
-                           User], 'redmine_privacy_terms')
+      loader.add_patch %w[ApplicationController
+                          User]
 
       # Helper
-      SettingsController.send :helper, PrivacyTermsHelper
+      loader.add_helper({ controller: SettingsController, helper: 'PrivacyTerms' })
+
+      # Apply patches and helper
+      loader.apply!
 
       # Macros
-      Additionals.load_macros 'redmine_privacy_terms'
+      loader.load_macros!
 
-      # hooks
-      RedminePrivacyTerms::Hooks
+      # Hooks
+      loader.load_hooks!
     end
 
     # support with default setting as fall back
@@ -27,7 +32,7 @@ module RedminePrivacyTerms
       if settings.key? value
         settings[value]
       else
-        Additionals.load_settings('redmine_privacy_terms')[value]
+        AdditionalsLoader.default_settings('redmine_privacy_terms')[value]
       end
     end
 

@@ -18,11 +18,9 @@ Redmine::Plugin.register :redmine_privacy_terms do
 
   permission :show_terms_condition, {}
 
-  settings default: Additionals.load_settings('redmine_privacy_terms'), partial: 'redmine_privacy_terms/settings/settings'
+  settings default: AdditionalsLoader.default_settings('redmine_privacy_terms'), partial: 'redmine_privacy_terms/settings/settings'
 end
 
-if Rails.version > '6.0'
-  ActiveSupport.on_load(:active_record) { RedminePrivacyTerms.setup }
-else
-  Rails.configuration.to_prepare { RedminePrivacyTerms.setup }
+AdditionalsLoader.to_prepare do
+  RedminePrivacyTerms.setup
 end
