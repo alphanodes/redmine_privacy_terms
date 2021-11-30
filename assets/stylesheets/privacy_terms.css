@@ -1,5 +1,11 @@
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
 
+.termsfeed-com---nb .cc-nb-okagree,
+.termsfeed-com---nb .cc-nb-reject,
+.termsfeed-com---nb .cc-nb-changep {
+  min-height: 40px;
+}
+
 .accept-terms-button {
   font-weight: bold;
   background-color: #1abc9c;
