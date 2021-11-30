@@ -6,6 +6,7 @@ v1.0.3
 
 - Redmine 4.2 support
 - Ruby 2.6.0 or newer is required
+- Update cookieconsent to version 4.0.0
 
 v1.0.2
 ------

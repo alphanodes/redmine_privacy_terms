@@ -1,28 +1,19 @@
-- if RedminePrivacyTerms.setting?(:enable_cookie_agreement)
-  = stylesheet_link_tag 'cookieconsent.min', plugin: 'redmine_privacy_terms'
-  = javascript_include_tag('cookieconsent.min', plugin: 'redmine_privacy_terms')
+- if RedminePrivacyTerms.setting? :enable_cookie_agreement
+  = javascript_include_tag 'cookie-consent.min', plugin: 'redmine_privacy_terms'
 
   javascript:
-    window.addEventListener("load", function(){
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": {
-            "background": "#{RedminePrivacyTerms.setting(:cookieconsent_popup_background)}",
-            "text": "#{RedminePrivacyTerms.setting(:cookieconsent_popup_text)}"
-          },
-          "button": {
-            "background": "#{RedminePrivacyTerms.setting(:cookieconsent_button_background)}",
-            "text": "#{RedminePrivacyTerms.setting(:cookieconsent_button_text)}"
-          }
-        },
-        "position": "top",
-        "content": {
-          "message": "#{RedminePrivacyTerms.setting(:cookieconsent_message)}",
-          "dismiss": "#{RedminePrivacyTerms.setting(:cookieconsent_dismiss)}",
-          "link": "#{RedminePrivacyTerms.setting(:cookieconsent_link)}",
-          "href": "#{RedminePrivacyTerms.setting(:cookieconsent_href)}"
-        }
-      })});
+    document.addEventListener('DOMContentLoaded', function () {
+      cookieconsent.run({
+        "notice_banner_type": "#{RedminePrivacyTerms.setting(:cookieconsent_banner_type).presence || 'headline'}",
+        "consent_type": "#{RedminePrivacyTerms.setting(:cookieconsent_consent_type).presence || 'express'}",
+        "palette": "#{RedminePrivacyTerms.setting(:cookieconsent_palette).presence || 'light'}",
+        "language": "#{RedminePrivacyTerms.setting(:cookieconsent_language).presence || 'en'}",
+        "page_load_consent_levels": ["strictly-necessary"],
+        "notice_banner_reject_button_hide": false,
+        "preferences_center_close_button_hide": false,
+        "website_name": "#{Setting.app_title.presence || 'Redmine'}",
+        "website_privacy_policy_url": "#{RedminePrivacyTerms.setting :cookieconsent_href}" });
+    });
 
 - if RedminePrivacyTerms.setting?(:enable_cookie_agreement) || RedminePrivacyTerms.setting?(:enable_terms)
   = stylesheet_link_tag 'privacy_terms', plugin: 'redmine_privacy_terms'

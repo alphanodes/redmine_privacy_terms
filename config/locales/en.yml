@@ -7,14 +7,11 @@ en:
   inspect_user_inactive_over_one_year: Inactive user > 1 year
   inspect_user_terms_not_accepted: User without accepted term of use
   inspect_user_visibility: Number of user-visibility all
-  label_cookieconsent_button_background: Background button
-  label_cookieconsent_button_text: Text button
-  label_cookieconsent_dismiss: Dismiss button text
+  label_cookieconsent_banner_type: Banner type
+  label_cookieconsent_consent_type: Consent Type
   label_cookieconsent_href: Cookieconsent URL link
-  label_cookieconsent_link: URL link text
-  label_cookieconsent_message: Cookieconsent message
-  label_cookieconsent_popup_background: Background popup
-  label_cookieconsent_popup_text: Text popup
+  label_cookieconsent_language: Language
+  label_cookieconsent_palette: Color palette
   label_default_accept_terms: I agree
   label_default_reject_terms: Reject
   label_enable_cookie_agreement: Enable cookie agreement
@@ -36,3 +33,4 @@ en:
   privacy_terms_reset_info: All users will be asked to accept the privacy policy again. For example use this, if changes have been made to the regulations.
   terms_reject_url_info: Here you can specify a wiki page for the selected project or an external website.
   terms_url_info: A wiki page must be specified here in the selected project to which each user has read-access. A public project is the best way to do this. In this wiki page the conditions are to be defined. Additionally, the two macros {{terms_accept}} and {{terms_reject}} must be implemented in it.
+  cookieconsent_consent_type_info: "Express: Your JavaScript scripts will be loaded only after the user clicks 'I agree'. Implied: our JavaScript scripts will be loaded automatically."

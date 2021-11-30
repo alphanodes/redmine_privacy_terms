@@ -2,26 +2,61 @@ p
   = additionals_settings_checkbox :enable_cookie_agreement
 
 p
-  = label_tag 'settings[cookieconsent_popup_background]', t(:label_cookieconsent_popup_background)
-  = color_field_tag 'settings[cookieconsent_popup_background]', @settings[:cookieconsent_popup_background], size: 10
+  = additionals_settings_select :cookieconsent_banner_type,
+                                options_for_select({ 'Simple' => 'simple',
+                                                     'Headline' => 'headline',
+                                                     'Interstitial' => 'interstitial',
+                                                     'Standalone' => 'standalone' },
+                                                    @settings[:cookieconsent_banner_type])
+
 p
-  = label_tag 'settings[cookieconsent_popup_text]', t(:label_cookieconsent_popup_text)
-  = color_field_tag 'settings[cookieconsent_popup_text]', @settings[:cookieconsent_popup_text], size: 10
+  = additionals_settings_select :cookieconsent_consent_type,
+                                options_for_select({ 'Express (GDPR + EU Cookies Directive)' => 'express',
+                                                     'Implied (EU Cookies Directive)' => 'implied' },
+                                                    @settings[:cookieconsent_consent_type])
+  em.info = l :cookieconsent_consent_type_info
+
 p
-  = label_tag 'settings[cookieconsent_button_background]', t(:label_cookieconsent_button_background)
-  = color_field_tag 'settings[cookieconsent_button_background]', @settings[:cookieconsent_button_background], size: 10
+  = additionals_settings_select :cookieconsent_palette,
+                                options_for_select({ 'Light' => 'light',
+                                                     'Black' => 'black' },
+                                                   @settings[:cookieconsent_palette])
 p
-  = label_tag 'settings[cookieconsent_button_text]', t(:label_cookieconsent_button_text)
-  = color_field_tag 'settings[cookieconsent_button_text]', @settings[:cookieconsent_button_text], size: 10
-p
-  = additionals_settings_textarea :cookieconsent_message
-p
-  = additionals_settings_textfield :cookieconsent_dismiss, size: 50
-p
-  = additionals_settings_textfield :cookieconsent_link, size: 50
+  = additionals_settings_select :cookieconsent_language,
+                                options_for_select({ 'English' => 'en',
+                                                     'German' => 'de',
+                                                     'French' => 'fr',
+                                                     'Spanish' => 'es',
+                                                     'Catalan' => 'ca_es',
+                                                     'Italian' => 'it',
+                                                     'Swedish' => 'sv',
+                                                     'Norwegian' => 'no',
+                                                     'Dutch' => 'nl',
+                                                     'Portugese' => 'pt',
+                                                     'Finnish' => 'fi',
+                                                     'Hungarian' => 'hu',
+                                                     'Czech' => 'cs',
+                                                     'Croatian' => 'hr',
+                                                     'Danish' => 'da',
+                                                     'Slovak' => 'sk',
+                                                     'Slovenian' => 'sl',
+                                                     'Polish' => 'pl',
+                                                     'Greek' => 'el',
+                                                     'Romanian' => 'ro',
+                                                     'Serbian' => 'sr',
+                                                     'Lithuanian' => 'lt',
+                                                     'Latvian' => 'lv',
+                                                     'Russian' => 'ru',
+                                                     'Bulgarian' => 'bg',
+                                                     'Welsh' => 'cy',
+                                                     'Japanese' => 'ja',
+                                                     'Arabic' => 'ar',
+                                                     'Turkish' => 'tr' },
+                                                     @settings[:cookieconsent_language])
+
 p
   = additionals_settings_textfield :cookieconsent_href, size: 50
   - if @settings[:cookieconsent_href].present?
     '
     = link_to(l(:button_show), @settings[:cookieconsent_href], class: 'external')
-  em.info = l(:cookieconsent_href_info)
+  em.info = l :cookieconsent_href_info
