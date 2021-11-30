@@ -33,4 +33,4 @@ de:
   privacy_terms_reset_info: Alle Benutzer werden erneut aufgefordert die Nutzungsbedingungen anzunehmen. Dies kann z.B. verwendet werden, wenn sich an den Bedingungen etwas geändert hat.
   terms_reject_url_info: Hier kann eine Wiki-Seite zum ausgewählten Projekt oder eine externe Webseite angegeben werden.
   terms_url_info: Hier muss eine Wiki-Seite im ausgewählten Projekt angegeben werden, auf die jeder Benutzer Lesezugriff hat. Dafür eignet sich am Besten ein öffentliches Projekt. In dieser Wiki-Seite sind die Bedingungen zu definieren. Zusätzlich müssen die beiden Makros {{terms_accept}} und {{terms_reject}} darin verwendet werden.
-  cookieconsent_consent_type_info: "Express: Your JavaScript scripts will be loaded only after the user clicks 'I agree'. Implied: our JavaScript scripts will be loaded automatically."
+  cookieconsent_consent_type_info: "Express: Die JavaScript-Skripte werden erst geladen, wenn der Benutzer auf 'Ich stimme zu' klickt. Implied: Die JavaScript Skripte werden automatisch geladen."
