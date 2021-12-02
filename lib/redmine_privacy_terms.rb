@@ -22,9 +22,6 @@ module RedminePrivacyTerms
 
       # Macros
       loader.load_macros!
-
-      # Hooks
-      loader.load_hooks!
     end
 
     # support with default setting as fall back
