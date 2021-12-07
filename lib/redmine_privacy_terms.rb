@@ -4,38 +4,10 @@ module RedminePrivacyTerms
   VERSION = '1.0.3'
   INSPECTOR_DOC_URL = 'https://github.com/alphanodes/redmine_privacy_terms/blob/master/INSPECTORS.md'
 
+  include RedminePluginKit::PluginBase
+
   class << self
     include Additionals::Helpers
-
-    def setup
-      loader = AdditionalsLoader.new plugin_id: 'redmine_privacy_terms'
-
-      # Patches
-      loader.add_patch %w[ApplicationController
-                          User]
-
-      # Helper
-      loader.add_helper({ controller: SettingsController, helper: 'PrivacyTerms' })
-
-      # Apply patches and helper
-      loader.apply!
-
-      # Macros
-      loader.load_macros!
-    end
-
-    # support with default setting as fall back
-    def setting(value)
-      if settings.key? value
-        settings[value]
-      else
-        AdditionalsLoader.default_settings('redmine_privacy_terms')[value]
-      end
-    end
-
-    def setting?(value)
-      Additionals.true? settings[value]
-    end
 
     def valid_terms_url?
       page = setting :terms_page
@@ -106,16 +78,24 @@ module RedminePrivacyTerms
       return true if page.include?('http:') || page.include?('https:')
     end
 
-    def additionals_help_items
-      [{ title: 'Redmine Git Hosting',
-         url: 'http://redmine-git-hosting.io/get_started/',
-         admin: true }]
-    end
-
     private
 
-    def settings
-      Setting[:plugin_redmine_privacy_terms]
+    def setup
+      # Patches
+      loader.add_patch %w[ApplicationController
+                          User]
+
+      # Helper
+      loader.add_helper({ controller: SettingsController, helper: 'PrivacyTerms' })
+
+      # Apply patches and helper
+      loader.apply!
+
+      # Macros
+      loader.load_macros!
+
+      # Load view hooks
+      loader.load_view_hooks!
     end
   end
 end

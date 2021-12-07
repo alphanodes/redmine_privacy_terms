@@ -58,5 +58,5 @@ p
   = additionals_settings_textfield :cookieconsent_href, size: 50
   - if @settings[:cookieconsent_href].present?
     '
-    = link_to(l(:button_show), @settings[:cookieconsent_href], class: 'external')
+    = link_to_external l(:button_show), @settings[:cookieconsent_href]
   em.info = l :cookieconsent_href_info

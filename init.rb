@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-raise "\n\033[31maredmine_privacy_terms requires ruby 2.6 or newer. Please update your ruby version.\033[0m" if RUBY_VERSION < '2.6'
+loader = RedminePluginKit::Loader.new plugin_id: 'redmine_privacy_terms'
 
 Redmine::Plugin.register :redmine_privacy_terms do
   name 'Redmine Privacy & Terms'
@@ -18,8 +18,9 @@ Redmine::Plugin.register :redmine_privacy_terms do
 
   permission :show_terms_condition, {}
 
-  settings default: AdditionalsLoader.default_settings('redmine_privacy_terms'), partial: 'redmine_privacy_terms/settings/settings'
+  settings default: loader.default_settings,
+           partial: 'redmine_privacy_terms/settings/settings'
 end
 
-AdditionalsLoader.load_hooks! 'redmine_privacy_terms'
-AdditionalsLoader.to_prepare { RedminePrivacyTerms.setup } if Rails.version < '6.0'
+RedminePluginKit::Loader.persisting { loader.load_model_hooks! }
+RedminePluginKit::Loader.to_prepare { RedminePrivacyTerms.setup! } if Rails.version < '6.0'

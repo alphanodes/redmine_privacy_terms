@@ -4,19 +4,18 @@ div
 table
   thead
     tr
-      th = l(:field_name)
-      th = l(:field_value)
-      th = l(:field_privacy_terms_result)
+      th = l :field_name
+      th = l :field_value
+      th = l :field_privacy_terms_result
   tbody
     - privacy_terms_inspect_results.each do |result|
       tr
         - if result[:id].present?
           td
-            = link_to(result[:name],
-                      RedminePrivacyTerms::INSPECTOR_DOC_URL + "##{result[:id]}",
-                      class: 'external')
+            = link_to_external result[:name],
+                               "#{RedminePrivacyTerms::INSPECTOR_DOC_URL}##{result[:id]}"
         - else
           td = result[:name]
         td = result[:value]
         td = result[:result]
-    = call_hook(:view_privacy_terms_inspect)
+    = call_hook :view_privacy_terms_inspect
