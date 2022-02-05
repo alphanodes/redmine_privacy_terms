@@ -29,7 +29,7 @@ module PrivacyTermsHelper
             value: roles_amount,
             result: inspect_bool_result(roles_amount.zero?) }
 
-    inactive_users = User.active.where('last_login_on < ?', Time.zone.now - 1.year).count
+    inactive_users = User.active.where('last_login_on < ?', 1.year.ago).count
     rc << { name: l(:inspect_user_inactive_over_one_year),
             id: 'inactive_users',
             value: inactive_users,
