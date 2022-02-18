@@ -8,7 +8,7 @@ fieldset.privacy-terms
     = label_tag 'settings[terms_project_id]', l(:label_project)
     - if AdditionalsPlugin.active_reporting?
       = autocomplete_select_entries('settings[terms_project_id]',
-                                    'projects_reporting_autocompletes',
+                                    'projects_auto_completes',
                                     (@settings[:terms_project_id].present? ? Project.find_by(id: @settings[:terms_project_id]) : nil))
     - else
       = select_tag('settings[terms_project_id]',
@@ -29,7 +29,7 @@ fieldset.privacy-terms
     = label_tag 'settings[terms_reject_project_id]', l(:label_project)
     - if AdditionalsPlugin.active_reporting?
       = autocomplete_select_entries('settings[terms_reject_project_id]',
-                                    'projects_reporting_autocompletes',
+                                    'projects_autocompletes',
                                     (@settings[:terms_reject_project_id].present? ? Project.find_by(id: @settings[:terms_reject_project_id]) : nil),
                                     include_blank: true, allow_clear: true)
     - else
