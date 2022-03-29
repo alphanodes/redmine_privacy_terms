@@ -11,7 +11,7 @@ Redmine::Plugin.register :redmine_privacy_terms do
   author_url 'https://alphanodes.com/'
 
   begin
-    requires_redmine_plugin :additionals, version_or_higher: '3.0.5'
+    requires_redmine_plugin :additionals, version_or_higher: '3.0.6'
   rescue Redmine::PluginNotFound
     raise 'Please install additionals plugin (https://github.com/alphanodes/additionals)'
   end

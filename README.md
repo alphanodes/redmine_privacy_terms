@@ -15,9 +15,9 @@ Features
 Requirements
 ------------
 
-* Redmine version >= 4.1.0
+* Redmine version >= 5.0
 * Redmine Plugin: [additionals](https://github.com/alphanodes/additionals)
-* Ruby version >= 2.6
+* Ruby version >= 2.7
 
 Installation
 ------------

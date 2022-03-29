@@ -1,6 +1,6 @@
 linters:
   LineLength:
-    max: 140
+    max: 180
   RuboCop:
     ignored_cops:
       - Layout/ArgumentAlignment

@@ -13,7 +13,7 @@ jobs:
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6
+        ruby-version: 3.0
         bundler-cache: true
 
     - name: Setup gems
@@ -24,6 +24,11 @@ jobs:
     - name: Run RuboCop
       run: |
         bundle exec rubocop -S
+
+    - name: Run Slim-Lint
+      run: |
+        bundle exec slim-lint app/views
+      if: always()
 
     - name: Run Brakeman
       run: |
