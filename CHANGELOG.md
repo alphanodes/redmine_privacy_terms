@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v1.0.5
+------
+
+- Fix bug with settings without reporting plugin
+
 v1.0.4
 ------
 
