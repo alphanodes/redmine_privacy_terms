@@ -23,4 +23,3 @@ Redmine::Plugin.register :redmine_privacy_terms do
 end
 
 RedminePluginKit::Loader.persisting { loader.load_model_hooks! }
-RedminePluginKit::Loader.to_prepare { RedminePrivacyTerms.setup! } if Rails.version < '6.0'
