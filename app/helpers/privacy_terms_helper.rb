@@ -29,14 +29,14 @@ module PrivacyTermsHelper
             value: roles_amount,
             result: inspect_bool_result(roles_amount.zero?) }
 
-    inactive_users = User.active.where('last_login_on < ?', 1.year.ago).count
+    inactive_users = User.active.where(last_login_on: ...1.year.ago).count
     rc << { name: l(:inspect_user_inactive_over_one_year),
             id: 'inactive_users',
             value: inactive_users,
             result: inspect_bool_result(inactive_users.zero?) }
 
     if RedminePrivacyTerms.setting? :enable_terms
-      terms_not_accepted = User.active.where(admin: false).where(accept_terms_at: nil).count
+      terms_not_accepted = User.active.where(admin: false, accept_terms_at: nil).count
       rc << { name: l(:inspect_user_terms_not_accepted),
               id: 'user_terms_not_accepted',
               value: terms_not_accepted,
