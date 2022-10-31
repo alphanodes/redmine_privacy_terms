@@ -27,8 +27,10 @@ class I18nTest < ActiveSupport::TestCase
       assert set_language_if_valid(lang)
       case lang.to_s
       when 'en'
+
         assert_equal 'Result', l(:field_privacy_terms_result)
       when 'de'
+
         assert_not l(:field_privacy_terms_result) == 'Result', lang
       end
     end

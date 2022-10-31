@@ -16,28 +16,34 @@ class TermsControllerTest < Redmine::ControllerTest
 
   def test_accept
     user = User.find 2
+
     assert user.save
     @request.session[:user_id] = user.id
 
     get :accept
+
     assert_response 302
   end
 
   def test_reject
     user = User.find 2
+
     assert user.save
     @request.session[:user_id] = user.id
 
     get :reject
+
     assert_response 302
   end
 
   def test_reset_should_require_admin
     user = User.find 2
+
     assert user.save
     @request.session[:user_id] = user.id
 
     get :reset
+
     assert_response 403
   end
 end
