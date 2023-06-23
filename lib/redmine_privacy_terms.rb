@@ -11,13 +11,13 @@ module RedminePrivacyTerms
 
     def valid_terms_url?
       page = setting :terms_page
-      return if page.blank? || external_page?(page)
+      return false if page.blank? || external_page?(page)
 
       project_id = setting :terms_project_id
-      return if project_id.blank?
+      return false if project_id.blank?
 
       project = Project.find_by id: project_id
-      return if project.blank?
+      return false if project.blank?
 
       wiki_page = project.wiki&.find_page page
       return true if wiki_page.present?
@@ -25,14 +25,14 @@ module RedminePrivacyTerms
 
     def valid_terms_reject_url?
       page = setting :terms_reject_page
-      return if page.blank?
+      return false if page.blank?
       return true if external_page? page
 
       project_id = setting :terms_reject_project_id
-      return if project_id.blank?
+      return false if project_id.blank?
 
       project = Project.find_by id: project_id
-      return if project.blank?
+      return false if project.blank?
 
       wiki_page = project.wiki&.find_page page
       return true if wiki_page.present?
