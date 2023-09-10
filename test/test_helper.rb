@@ -20,12 +20,12 @@ module RedminePrivacyTerms
     include ActionDispatch::TestProcess
 
     def self.prepare
-      Role.where(id: [1, 2]).each do |r|
+      Role.where(id: [1, 2]).find_each do |r|
         r.permissions << :view_wiki_pages
         r.save
       end
 
-      Project.where(id: [1, 2]).each do |project|
+      Project.where(id: [1, 2]).find_each do |project|
         EnabledModule.create project: project, name: 'wiki'
       end
     end

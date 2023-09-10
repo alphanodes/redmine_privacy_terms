@@ -21,6 +21,8 @@ module RedminePrivacyTerms
 
       wiki_page = project.wiki&.find_page page
       return true if wiki_page.present?
+
+      false
     end
 
     def valid_terms_reject_url?
@@ -36,6 +38,8 @@ module RedminePrivacyTerms
 
       wiki_page = project.wiki&.find_page page
       return true if wiki_page.present?
+
+      false
     end
 
     def terms_url(lang = nil)
@@ -75,7 +79,7 @@ module RedminePrivacyTerms
     end
 
     def external_page?(page)
-      return true if page.include?('http:') || page.include?('https:')
+      page.include?('http:') || page.include?('https:')
     end
 
     private
