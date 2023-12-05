@@ -3,7 +3,7 @@
 loader = RedminePluginKit::Loader.new plugin_id: 'redmine_privacy_terms'
 
 Redmine::Plugin.register :redmine_privacy_terms do
-  name 'Redmine Privacy & Terms'
+  name 'Privacy & Terms'
   url 'https://github.com/alphanodes/redmine_privacy_terms'
   description 'Add privacy cookie information and terms for users'
   version RedminePrivacyTerms::VERSION
