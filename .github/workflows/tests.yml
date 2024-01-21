@@ -53,20 +53,20 @@ jobs:
         if: matrix.db == 'mysql'
 
       - name: Checkout Redmine
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: redmine/redmine
           ref: ${{ matrix.redmine }}
           path: redmine
 
       - name: Checkout additionals
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: AlphaNodes/additionals
           path: redmine/plugins/additionals
 
       - name: Checkout redmine_privacy_terms
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: redmine/plugins/redmine_privacy_terms
 
@@ -91,8 +91,6 @@ jobs:
       - name: Prepare Redmine source
         working-directory: redmine
         run: |
-          sed -i '/rubocop/d' Gemfile
-          rm -f .rubocop*
           cp plugins/redmine_privacy_terms/test/support/database-${{ matrix.db }}.yml config/database.yml
           cp plugins/redmine_privacy_terms/test/support/configuration.yml config/configuration.yml
 
