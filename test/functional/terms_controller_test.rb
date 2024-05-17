@@ -22,7 +22,7 @@ class TermsControllerTest < Redmine::ControllerTest
 
     get :accept
 
-    assert_response 302
+    assert_response :found
   end
 
   def test_reject
@@ -33,7 +33,7 @@ class TermsControllerTest < Redmine::ControllerTest
 
     get :reject
 
-    assert_response 302
+    assert_response :found
   end
 
   def test_reset_should_require_admin
@@ -44,6 +44,6 @@ class TermsControllerTest < Redmine::ControllerTest
 
     get :reset
 
-    assert_response 403
+    assert_response :forbidden
   end
 end
