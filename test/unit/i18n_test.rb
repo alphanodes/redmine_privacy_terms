@@ -19,22 +19,10 @@ class I18nTest < ActiveSupport::TestCase
   end
 
   def test_locales_validness
-    lang_files_count = Rails.root.glob('plugins/redmine_privacy_terms/config/locales/*.yml').size
-
-    assert_equal 2, lang_files_count
-
-    valid_languages.each do |lang|
-      assert set_language_if_valid(lang)
-      case lang.to_s
-      when 'en'
-
-        assert_equal 'Result', l(:field_privacy_terms_result)
-      when 'de'
-
-        assert_not l(:field_privacy_terms_result) == 'Result', lang
-      end
-    end
-
-    set_language_if_valid 'en'
+    assert_locales_validness plugin: 'redmine_privacy_terms',
+                             file_cnt: 2,
+                             locales: %w[de],
+                             control_string: :field_privacy_terms_result,
+                             control_english: 'Result'
   end
 end
