@@ -2,7 +2,7 @@
 
 require File.expand_path '../../test_helper', __FILE__
 
-class I18nTest < ActiveSupport::TestCase
+class I18nTest < RedminePrivacyTerms::TestCase
   include Redmine::I18n
 
   def setup

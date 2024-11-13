@@ -17,8 +17,13 @@ require File.expand_path "#{File.dirname __FILE__}/../../../test/test_helper"
 require File.expand_path "#{File.dirname __FILE__}/../../additionals/test/global_test_helper"
 
 module RedminePrivacyTerms
+  module TestHelper
+    include Additionals::GlobalTestHelper
+  end
+
   class TestCase
     include ActionDispatch::TestProcess
+    include RedminePrivacyTerms::TestHelper
 
     def self.prepare
       Role.where(id: [1, 2]).find_each do |r|
