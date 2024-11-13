@@ -54,7 +54,7 @@ module PrivacyTermsHelper
             id: 'public_projects',
             value: public_projects,
             result: inspect_bool_result(public_projects.zero?,
-                                        down_icon: 'fas_info',
+                                        down_icon: 'details',
                                         down_class: 'summary') }
 
     rc
@@ -63,13 +63,14 @@ module PrivacyTermsHelper
   private
 
   def inspect_bool_result(value, down_icon: nil, down_class: nil)
-    down_icon ||= 'far_thumbs-down'
+    down_icon ||= 'thumb-down'
     down_class ||= 'additionals-number-negative inspect-problem'
 
     if value
-      font_awesome_icon 'far_thumbs-up', class: 'additionals-number-positive inspect-good'
+      #      font_awesome_icon 'far_thumbs-up', class: 'additionals-number-positive inspect-good'
+      svg_icon_tag 'thumb-up', css_class: 'additionals-number-positive inspect-good'
     else
-      font_awesome_icon down_icon, class: down_class
+      svg_icon_tag down_icon, css_class: down_class
     end
   end
 end
