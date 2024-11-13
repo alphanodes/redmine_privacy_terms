@@ -67,7 +67,6 @@ module PrivacyTermsHelper
     down_class ||= 'additionals-number-negative inspect-problem'
 
     if value
-      #      font_awesome_icon 'far_thumbs-up', class: 'additionals-number-positive inspect-good'
       svg_icon_tag 'thumb-up', css_class: 'additionals-number-positive inspect-good'
     else
       svg_icon_tag down_icon, css_class: down_class
