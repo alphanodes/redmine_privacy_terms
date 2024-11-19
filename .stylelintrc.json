@@ -12,6 +12,11 @@
         ]
       }
     ],
+    "declaration-property-unit-disallowed-list": {
+      "font-size": [
+        "px"
+      ]
+    },
     "declaration-block-no-redundant-longhand-properties": true,
     "declaration-block-no-shorthand-property-overrides": true,
     "font-family-no-duplicate-names": true,
