@@ -3,11 +3,7 @@
 require File.expand_path '../../test_helper', __FILE__
 
 class TermsControllerTest < Redmine::ControllerTest
-  fixtures :projects,
-           :users, :email_addresses, :user_preferences,
-           :roles,
-           :members,
-           :member_roles
+  fixtures :all
 
   def setup
     Setting.default_language = 'en'
