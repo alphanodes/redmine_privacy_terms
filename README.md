@@ -79,7 +79,7 @@ Uninstall ``redmine_privacy_terms``
 
     cd $REDMINE_ROOT
     bundle exec rake redmine:plugins:migrate NAME=redmine_privacy_terms VERSION=0 RAILS_ENV=production
-    rm -rf plugins/redmine_privacy_terms public/plugin_assets/redmine_privacy_terms
+    rm -rf plugins/redmine_privacy_terms public/assets/plugin_assets/redmine_privacy_terms
 
 Restart Redmine (application server)
 
