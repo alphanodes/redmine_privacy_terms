@@ -1,0 +1,36 @@
+en:
+  button_reset_terms: Solicitar novos termos de uso
+  cookieconsent_href_info: Este URL deve apontar para um site externo ao qual todos os visitantes tenham acesso público.
+  field_privacy_terms_result: Resultado
+  inspect_admin_amount: Quantidade de administradores
+  inspect_never_logedin_users: Usuário nunca logado
+  inspect_user_inactive_over_one_year: Usuário inativo há mais de 1 ano
+  inspect_user_terms_not_accepted: Usuário sem termo de uso aceito
+  inspect_user_visibility: Número total de visibilidade do usuário
+  label_cookieconsent_banner_type: Tipo de banner
+  label_cookieconsent_consent_type: Tipo de consentimento
+  label_cookieconsent_href: Link do URL do consentimento de cookies
+  label_cookieconsent_language: Idioma
+  label_cookieconsent_palette: Paleta de cores
+  label_default_accept_terms: Eu concordo
+  label_default_reject_terms: Recusar
+  label_enable_cookie_agreement: Ativar acordo de cookies
+  label_enable_terms: Ativar termos
+  label_last_terms_reset: Última execução
+  label_privacy_cookie_agreement: Acordo de cookies
+  label_privacy_terms_inspect: Inspecionar
+  label_privacy_terms_tools: Ferramentas
+  label_privacy_terms: Termos de uso
+  label_terms_accepted_at: aceito em %{value}
+  label_terms_not_accepted: ainda não aceito
+  label_terms_reject_page: Página da Wiki ou URL externo
+  label_terms_reject_url: URL da Wiki para usuários que recusam os termos
+  label_terms_url: URL da Wiki com os termos
+  notice_terms_accepted_not_saved: A política de termos de uso não foi ativada pelo administrador. Portanto, a ação não foi salva.
+  notice_terms_reset_successfully: Política de termos de uso solicitada novamente com sucesso
+  permission_show_terms_condition: Exibir condição dos termos
+  privacy_terms_inspect_info: Esta página fornece informações que podem ajudar a identificar possíveis problemas de proteção de dados.
+  privacy_terms_reset_info: Todos os usuários serão solicitados a aceitar novamente a política de privacidade. Por exemplo, use esta opção caso tenham sido feitas alterações nas regulamentações.
+  terms_reject_url_info: Aqui você pode especificar uma página da Wiki para o projeto selecionado ou um site externo.
+  terms_url_info: Aqui deve ser especificada uma página da Wiki no projeto selecionado à qual cada usuário tenha acesso de leitura. Um projeto público é a melhor maneira de fazer isso. Nesta página da Wiki, as condições devem ser definidas. Além disso, os dois macros {{terms_accept}} e {{terms_reject}} devem ser implementados nela.
+  cookieconsent_consent_type_info: "Explícito: Seus scripts JavaScript serão carregados apenas após o usuário clicar em 'Eu concordo'. Implícito: Seus scripts JavaScript serão carregados automaticamente."
