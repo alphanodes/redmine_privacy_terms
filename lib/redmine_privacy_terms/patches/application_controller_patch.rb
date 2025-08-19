@@ -7,6 +7,7 @@ module RedminePrivacyTerms
 
       included do
         include InstanceMethods
+
         before_action :check_agreement
       end
 
