@@ -12,17 +12,17 @@
 
 ## Requirements
 
-* Redmine version >= 6.0
+* Redmine version >= 6.1
 * Redmine Plugin: [additionals](https://github.com/alphanodes/additionals)
-* Ruby version >= 3.1
+* Ruby version >= 3.2
 
 ## Installation
 
 Install ``redmine_privacy_terms`` plugin for `Redmine`
 
     cd $REDMINE_ROOT
-    git clone git://github.com/alphanodes/redmine_privacy_terms.git plugins/redmine_privacy_terms
-    git clone git://github.com/alphanodes/additionals.git plugins/additionals
+    git clone -b stable git://github.com/alphanodes/redmine_privacy_terms.git plugins/redmine_privacy_terms
+    git clone -b stable git://github.com/alphanodes/additionals.git plugins/additionals
     bundle config set --local without 'development test'
     bundle install
     bundle exec rake redmine:plugins:migrate RAILS_ENV=production

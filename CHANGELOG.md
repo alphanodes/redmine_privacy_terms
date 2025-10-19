@@ -1,6 +1,17 @@
 Changelog
 =========
 
+v1.0.7
+------
+
+- Redmine 6.1 required
+- Ruby 3.2 required
+
+v1.0.6
+------
+
+- Code maintained
+
 v1.0.5
 ------
 
@@ -17,7 +28,7 @@ v1.0.4
 v1.0.3
 ------
 
-- Redmine 4.2  and support
+- Redmine 4.2 and support
 - Ruby 2.6 or newer is required
 
 v1.0.2

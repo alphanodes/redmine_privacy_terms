@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RedminePrivacyTerms
-  VERSION = '1.0.6'
+  VERSION = '1.0.7'
   INSPECTOR_DOC_URL = 'https://github.com/alphanodes/redmine_privacy_terms/blob/master/INSPECTORS.md'
 
   include RedminePluginKit::PluginBase
