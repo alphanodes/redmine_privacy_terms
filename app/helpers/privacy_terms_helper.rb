@@ -67,7 +67,7 @@ module PrivacyTermsHelper
     down_class ||= 'additionals-number-negative inspect-problem'
 
     if value
-      svg_icon_tag 'thumb-up', css_class: 'additionals-number-positive inspect-good'
+      svg_icon_tag 'thumb-up', plugin: '', css_class: 'additionals-number-positive inspect-good'
     else
       svg_icon_tag down_icon, css_class: down_class
     end
