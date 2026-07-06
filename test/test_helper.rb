@@ -21,7 +21,7 @@ module RedminePrivacyTerms
     include Additionals::GlobalTestHelper
   end
 
-  class TestCase
+  class TestCase < ActiveSupport::TestCase
     include ActionDispatch::TestProcess
     include RedminePrivacyTerms::TestHelper
 
