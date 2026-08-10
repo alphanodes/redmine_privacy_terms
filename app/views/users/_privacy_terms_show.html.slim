@@ -2,9 +2,7 @@
     RedminePrivacyTerms.valid_terms_url? && \
     (User.current == user || User.current.allowed_to?(:show_terms_condition, nil, global: true))
   li.terms-condition
-    span.label
-      = l :label_privacy_terms
-      | :
+    = attribute_label :label_privacy_terms
     ul
       li = link_to l(:button_show), RedminePrivacyTerms.terms_url
       li
