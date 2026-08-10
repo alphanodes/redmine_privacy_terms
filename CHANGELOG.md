@@ -4,6 +4,8 @@ Changelog
 v1.0.7
 ------
 
+- The terms entry in the user sidebar uses the shared sidebar attribute style
+  (label in front of the value), so it matches the other entries of that list
 - Redmine 6.1 required
 - Ruby 3.2 required
 
