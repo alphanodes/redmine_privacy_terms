@@ -2,19 +2,14 @@
 
 require File.expand_path '../../test_helper', __FILE__
 
-class TermsControllerTest < Redmine::ControllerTest
-  fixtures :all
-
+class TermsControllerTest < RedminePrivacyTerms::ControllerTest
   def setup
     Setting.default_language = 'en'
     User.current = nil
   end
 
   def test_accept
-    user = User.find 2
-
-    assert user.save
-    @request.session[:user_id] = user.id
+    @request.session[:user_id] = users(:users_002).id
 
     get :accept
 
@@ -22,10 +17,7 @@ class TermsControllerTest < Redmine::ControllerTest
   end
 
   def test_reject
-    user = User.find 2
-
-    assert user.save
-    @request.session[:user_id] = user.id
+    @request.session[:user_id] = users(:users_002).id
 
     get :reject
 
@@ -33,10 +25,7 @@ class TermsControllerTest < Redmine::ControllerTest
   end
 
   def test_reset_should_require_admin
-    user = User.find 2
-
-    assert user.save
-    @request.session[:user_id] = user.id
+    @request.session[:user_id] = users(:users_002).id
 
     get :reset
 
