@@ -4,6 +4,8 @@ Changelog
 v1.1.0
 ------
 
+- Users with a mandatory 2FA setup and an open terms agreement can log in again.
+  The terms are requested after the 2FA setup instead of competing with it (#15721)
 - The terms entry in the user sidebar uses the shared sidebar attribute style
   (label in front of the value), so it matches the other entries of that list
 - The thumb-up icon is resolved against the Redmine core sprite
