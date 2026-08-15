@@ -17,6 +17,16 @@ require File.expand_path "#{File.dirname __FILE__}/../../../test/test_helper"
 require File.expand_path "#{File.dirname __FILE__}/../../additionals/test/global_test_helper"
 
 module RedminePrivacyTerms
+  module PluginFixturesLoader
+    def fixtures(*table_names)
+      dir = "#{File.dirname __FILE__}/fixtures/"
+      table_names.each do |x|
+        ActiveRecord::FixtureSet.create_fixtures dir, x if File.exist? "#{dir}/#{x}.yml"
+      end
+      super
+    end
+  end
+
   module TestHelper
     include Additionals::GlobalTestHelper
 
@@ -44,6 +54,7 @@ module RedminePrivacyTerms
 
   class ControllerTest < Redmine::ControllerTest
     include RedminePrivacyTerms::TestHelper
+    extend PluginFixturesLoader
 
     fixtures :all
   end
@@ -51,6 +62,7 @@ module RedminePrivacyTerms
   class TestCase < ActiveSupport::TestCase
     include ActionDispatch::TestProcess
     include RedminePrivacyTerms::TestHelper
+    extend PluginFixturesLoader
 
     fixtures :all
   end

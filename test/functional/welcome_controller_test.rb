@@ -3,6 +3,10 @@
 require File.expand_path '../../test_helper', __FILE__
 
 class WelcomeControllerTest < RedminePrivacyTerms::ControllerTest
+  # additionals renders a dashboard on the welcome page before the terms check
+  # runs, so the request needs a system default dashboard to get that far.
+  fixtures :dashboards, :dashboard_roles
+
   def setup
     prepare_tests
     Setting.default_language = 'en'
