@@ -1,11 +1,19 @@
 Changelog
 =========
 
-v1.0.7
+v1.1.0
 ------
 
 - The terms entry in the user sidebar uses the shared sidebar attribute style
   (label in front of the value), so it matches the other entries of that list
+- The thumb-up icon is resolved against the Redmine core sprite
+- Redmine 7.0 required
+- Ruby 3.3 required
+- additionals 4.6.0 required
+
+v1.0.7
+------
+
 - Redmine 6.1 required
 - Ruby 3.2 required
 
