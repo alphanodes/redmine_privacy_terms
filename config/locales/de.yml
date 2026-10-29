@@ -1,36 +1,37 @@
 de:
-  button_reset_terms: Nutzungsbedingungen neu anfordern
-  cookieconsent_href_info: Die URL sollte auf eine externe Seite verlinken, auf die jeder Zugriff hat (auch wenn man nicht in Redmine angemeldet ist).
-  field_privacy_terms_result: Ergebnis
-  inspect_admin_amount: Anzahl Administratoren
-  inspect_never_logedin_users: Nie angemeldete Benutzer
-  inspect_user_inactive_over_one_year: Benutzer inaktiv > 1 Jahr
-  inspect_user_terms_not_accepted: Benutzer ohne angenommene Nutzungsbedingungen
-  inspect_user_visibility: Anzahl Benutzer-Sichtbarkeit alle
-  label_cookieconsent_banner_type: Banner type
-  label_cookieconsent_consent_type: Consent Type
-  label_cookieconsent_href: URL Link Cookiehinweis
-  label_cookieconsent_language: Sprache
-  label_cookieconsent_palette: Farbschema
-  label_default_accept_terms: Einverstanden
-  label_default_reject_terms: Ablehnen
-  label_enable_cookie_agreement: Cookie Hinweis aktivieren
-  label_enable_terms: Bedingungen aktivieren
-  label_last_terms_reset: Letzte Ausführung
-  label_privacy_cookie_agreement: Cookie Zustimmung
-  label_privacy_terms_inspect: Prüfung
-  label_privacy_terms_tools: Tools
-  label_privacy_terms: Nutzungsbedingungen
-  label_terms_accepted_at: angenommen am %{value}
-  label_terms_not_accepted: nicht akzeptiert
-  label_terms_reject_page: Wiki-Seite oder externere URL
-  label_terms_reject_url: URL zur Wikiseite für Anwender die Bedingungen ablehnen
-  label_terms_url: URL zur Wikiseite mit den Bedingungen
-  notice_terms_accepted_not_saved: Nutzungsbedingungen wurden durch den Admin nicht aktiviert, daher wurde die Aktion nicht gespeichert.
-  notice_terms_reset_successfully: Nutzungsbedingungen erfolgreich neu angefordert
-  permission_show_terms_condition: Datenschutz Status anzeigen
-  privacy_terms_inspect_info: Diese Seite liefert Informationen, die dabei behilflich sein können mögliche Datenschutzprobleme zu identifieren. Im Idealfall ist alles grün.
-  privacy_terms_reset_info: Alle Benutzer werden erneut aufgefordert die Nutzungsbedingungen anzunehmen. Dies kann z.B. verwendet werden, wenn sich an den Bedingungen etwas geändert hat.
-  terms_reject_url_info: Hier kann eine Wiki-Seite zum ausgewählten Projekt oder eine externe Webseite angegeben werden.
-  terms_url_info: Hier muss eine Wiki-Seite im ausgewählten Projekt angegeben werden, auf die jeder Benutzer Lesezugriff hat. Dafür eignet sich am Besten ein öffentliches Projekt. In dieser Wiki-Seite sind die Bedingungen zu definieren. Zusätzlich müssen die beiden Makros {{terms_accept}} und {{terms_reject}} darin verwendet werden.
-  cookieconsent_consent_type_info: "Express: Die JavaScript-Skripte werden erst geladen, wenn der Benutzer auf 'Ich stimme zu' klickt. Implied: Die JavaScript Skripte werden automatisch geladen."
+  button_reset_terms: "Nutzungsbedingungen erneut anfordern"
+  cookieconsent_consent_type_info: "Express: Die Skripte werden erst geladen, wenn der Benutzer auf 'Ich stimme zu' klickt. Implied: Die Skripte werden sofort geladen."
+  cookieconsent_href_info: "Die URL muss auf eine externe Seite verlinken, die jeder Besucher ohne Anmeldung öffnen kann."
+  field_privacy_terms_result: "Ergebnis"
+  inspect_admin_amount: "Anzahl Administratoren"
+  inspect_never_logedin_users: "Nie angemeldete Benutzer"
+  inspect_user_inactive_over_one_year: "Benutzer, die länger als ein Jahr inaktiv sind"
+  inspect_user_terms_not_accepted: "Benutzer ohne angenommene Nutzungsbedingungen"
+  inspect_user_visibility: "Rollen, die alle aktiven Benutzer sehen"
+  label_cookieconsent_banner_type: "Banner-Typ"
+  label_cookieconsent_consent_type: "Art der Zustimmung"
+  label_cookieconsent_href: "URL der Cookie-Richtlinie"
+  label_cookieconsent_language: "Sprache"
+  label_cookieconsent_palette: "Farbschema"
+  label_default_accept_terms: "Einverstanden"
+  label_default_reject_terms: "Ablehnen"
+  label_enable_cookie_agreement: "Cookie-Zustimmung aktivieren"
+  label_enable_terms: "Nutzungsbedingungen aktivieren"
+  label_last_terms_reset: "Zuletzt angefordert"
+  label_privacy_cookie_agreement: "Cookie-Zustimmung"
+  label_privacy_terms: "Nutzungsbedingungen"
+  label_privacy_terms_inspect: "Prüfung"
+  label_privacy_terms_tools: "Werkzeuge"
+  label_public_projects: "Öffentliche Projekte"
+  label_terms_accepted_at: "angenommen am %{value}"
+  label_terms_not_accepted: "noch nicht angenommen"
+  label_terms_reject_page: "Wiki-Seite oder externe URL"
+  label_terms_reject_url: "Seite für Benutzer, die die Bedingungen ablehnen"
+  label_terms_url: "Wiki-Seite mit den Bedingungen"
+  notice_terms_accepted_not_saved: "Die Nutzungsbedingungen sind vom Administrator nicht aktiviert, daher wurde die Aktion nicht gespeichert."
+  notice_terms_reset_successfully: "Alle Benutzer wurden aufgefordert, die Nutzungsbedingungen erneut anzunehmen."
+  permission_show_terms_condition: "Status der Nutzungsbedingungen von Benutzern anzeigen"
+  privacy_terms_inspect_info: "Diese Seite zeigt Informationen, die helfen können, mögliche Datenschutzprobleme zu erkennen. Im Idealfall ist alles grün."
+  privacy_terms_reset_info: "Alle Benutzer werden aufgefordert, die Nutzungsbedingungen erneut anzunehmen, z.B. nachdem sich die Bedingungen geändert haben."
+  terms_reject_url_info: "Gib eine Wiki-Seite des ausgewählten Projekts oder eine externe Webseite an."
+  terms_url_info: "Gib eine Wiki-Seite des ausgewählten Projekts an, die jeder Benutzer lesen kann; am besten eignet sich ein öffentliches Projekt. Die Seite enthält die Bedingungen und muss die beiden Makros {{terms_accept}} und {{terms_reject}} enthalten."

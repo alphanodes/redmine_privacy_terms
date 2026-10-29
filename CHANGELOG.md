@@ -4,6 +4,7 @@ Changelog
 v1.1.0
 ------
 
+- Czech, Spanish, French, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Russian, Ukrainian and Chinese translations added, English and German texts revised
 - Users with a mandatory 2FA setup and an open terms agreement can log in again.
   The terms are requested after the 2FA setup instead of competing with it
 - The terms entry in the user sidebar uses the shared sidebar attribute style
