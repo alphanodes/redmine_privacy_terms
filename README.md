@@ -1,6 +1,6 @@
 # Privacy & Terms plugin for Redmine
 
-[![Rate at redmine.org](https://img.shields.io/badge/rate%20at-redmine.org-blue.svg?style=fla)](https://www.redmine.org/plugins/redmine_privacy_terms) [![Tests](https://github.com/AlphaNodes/redmine_privacy_terms/workflows/Tests/badge.svg)](https://github.com/AlphaNodes/redmine_privacy_terms/actions?query=workflow%3A"Run+Tests) ![Run Linters](https://github.com/AlphaNodes/redmine_privacy_terms/workflows/Run%20Linters/badge.svg)
+[![Rate at redmine.org](https://img.shields.io/badge/rate%20at-redmine.org-blue.svg?style=flat)](https://www.redmine.org/plugins/redmine_privacy_terms) [![Run Linters](../../actions/workflows/linters.yml/badge.svg)](../../actions/workflows/linters.yml) [![Run Tests](../../actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
 
 ## Features
 
